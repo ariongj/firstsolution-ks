@@ -3,45 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>First Solution L.L.C. — IT System Integration in Kosovo</title>
-  <meta name="description" content="First Solution L.L.C. — IT system integration, hardware supply, networking and support for businesses and institutions in Kosovo. HP Gold Partner with 15+ years of experience.">
-  <meta name="theme-color" content="#0a1630">
-  <meta property="og:title" content="First Solution L.L.C. — IT System Integration in Kosovo">
-  <meta property="og:description" content="Hardware, networking, servers and IT support for businesses and institutions across Kosovo.">
+  <title>First Solution L.L.C. — Trusted IT Partner for Institutions in Kosovo</title>
+  <meta name="description" content="First Solution L.L.C. is the trusted IT partner of institutions and businesses in Kosovo: IT system integration, hardware reselling and networking, built on over 15 years of expertise.">
+  <meta name="theme-color" content="#0a1628">
+  <meta property="og:title" content="First Solution L.L.C. — Trusted IT Partner for Institutions in Kosovo">
+  <meta property="og:description" content="IT system integration, hardware reselling and networking for institutions and businesses in Kosovo and beyond.">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy-950: #060e20;
-      --navy-900: #0a1630;
-      --navy-800: #10224a;
-      --navy-700: #1a3266;
-      --blue-500: #2f7cf6;
-      --blue-400: #4f95ff;
-      --cyan-400: #2ad4e6;
-      --ink: #0d1b33;
-      --ink-soft: #4a5a75;
-      --line: #e3e9f3;
+      /* ===== FIRST SOLUTION BRAND (taken from firstsolution-ks.com) ===== */
+      --navy-950: #070f1e;
+      --navy-900: #0a1628;      /* main dark background */
+      --navy-800: #0f2038;
+      --navy-700: #16304f;
+      --blue-500: #2f80ed;      /* primary blue */
+      --blue-400: #4a9af2;
+      --cyan-400: #56ccf2;      /* gradient end / accent */
+      --brand-rgb: 47,128,237;
+      --accent-rgb: 86,204,242;
+      --brand-grad: linear-gradient(90deg, #2f80ed, #56ccf2);
+      /* ================================================================== */
+      --ink: #0f1b2d;
+      --ink-soft: #55657d;
+      --line: #e3e9f2;
       --bg: #ffffff;
-      --bg-soft: #f4f7fc;
+      --bg-soft: #f5f7fb;
       --radius: 18px;
-      --shadow: 0 10px 30px -12px rgba(10, 22, 48, .18);
-      --shadow-lg: 0 30px 60px -20px rgba(10, 22, 48, .35);
+      --shadow: 0 10px 30px -12px rgba(10, 22, 40, .18);
+      --shadow-lg: 0 30px 60px -20px rgba(10, 22, 40, .35);
       --max: 1200px;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
       margin: 0;
-      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      font-family: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
@@ -52,314 +54,248 @@
     .section-soft { background: var(--bg-soft); }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--blue-500);
+      font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-500);
     }
-    .eyebrow::before { content: ""; width: 22px; height: 2px; background: currentColor; border-radius: 2px; }
-    .section-head { max-width: 680px; margin-bottom: 56px; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--brand-grad); border-radius: 2px; }
+    .section-head { max-width: 700px; margin-bottom: 56px; }
     .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-    .section-head.center .eyebrow::after { content: ""; width: 22px; height: 2px; background: currentColor; border-radius: 2px; }
-    .section-head h2 { font-size: clamp(30px, 4vw, 44px); margin: 14px 0 16px; }
+    .section-head.center .eyebrow::after { content: ""; width: 22px; height: 2px; background: var(--brand-grad); border-radius: 2px; }
+    .section-head h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin: 14px 0 16px; }
     .section-head p { color: var(--ink-soft); font-size: 18px; }
+    .dark .section-head h2 { color: #fff; }
+    .dark .section-head p { color: #a9b9d3; }
+    .dark .eyebrow { color: var(--cyan-400); }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 15px 26px; border-radius: 12px; font-weight: 700; font-size: 15px;
+      padding: 15px 28px; border-radius: 999px; font-weight: 700; font-size: 15px;
       border: 1px solid transparent; cursor: pointer; font-family: inherit;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
     .btn svg { width: 18px; height: 18px; transition: transform .2s ease; }
     .btn:hover svg { transform: translateX(3px); }
-    .btn-primary { background: linear-gradient(135deg, var(--blue-500), #1f63d8); color: #fff; box-shadow: 0 12px 28px -10px rgba(47,124,246,.7); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(47,124,246,.8); }
-    .btn-ghost { background: rgba(255,255,255,.06); color: #fff; border-color: rgba(255,255,255,.22); }
+    .btn-primary { background: var(--brand-grad); color: #fff; box-shadow: 0 12px 28px -10px rgba(var(--brand-rgb),.75); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(var(--brand-rgb),.85); }
+    .btn-ghost { background: rgba(255,255,255,.06); color: #fff; border-color: rgba(255,255,255,.25); }
     .btn-ghost:hover { background: rgba(255,255,255,.12); }
 
+    /* ---------- Logo (wordmark; replace with logo file when available) ---------- */
+    .brand { display: flex; align-items: center; gap: 10px; color: #fff; }
+    .brand-mark { width: 40px; height: 34px; flex-shrink: 0; }
+    .wordmark { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 600; text-transform: uppercase; line-height: .95; letter-spacing: .02em; }
+    .wordmark span { display: block; font-size: 15px; }
+    .wordmark span:last-child { font-size: 17px; }
+
     /* ---------- Header ---------- */
-    .header {
-      position: fixed; inset: 0 0 auto 0; z-index: 50;
-      transition: background .3s ease, box-shadow .3s ease, padding .3s ease;
-      padding: 18px 0;
-    }
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 50; padding: 18px 0; transition: background .3s, box-shadow .3s, padding .3s; }
     .header.scrolled {
-      background: rgba(6, 14, 32, .86);
-      backdrop-filter: saturate(160%) blur(14px);
-      -webkit-backdrop-filter: saturate(160%) blur(14px);
-      box-shadow: 0 1px 0 rgba(255,255,255,.06);
-      padding: 10px 0;
+      background: rgba(10, 22, 40, .9); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.06); padding: 10px 0;
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
-    .brand-mark { width: 40px; height: 40px; flex-shrink: 0; }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .brand-text strong { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
-    .brand-text span { font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8fb2ea; }
-    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a {
-      color: #c7d5ef; font-weight: 600; font-size: 15px; padding: 10px 14px; border-radius: 10px;
-      transition: color .2s, background .2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,.07); }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: #d0dbee; font-weight: 600; font-size: 15px; padding: 10px 13px; border-radius: 999px; transition: color .2s, background .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,.08); }
     .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .lang {
-      display: inline-flex; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
-      border-radius: 10px; padding: 3px;
-    }
-    .lang button {
-      border: 0; background: transparent; color: #a9bde0; font: 700 12px/1 inherit; letter-spacing: .06em;
-      padding: 8px 10px; border-radius: 7px; cursor: pointer; font-family: inherit;
-    }
+    .lang { display: inline-flex; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 3px; }
+    .lang button { border: 0; background: transparent; color: #a9b9d3; font: 700 12px/1 inherit; letter-spacing: .06em; padding: 8px 11px; border-radius: 999px; cursor: pointer; font-family: inherit; }
     .lang button.on { background: #fff; color: var(--navy-900); }
-    .nav .btn { padding: 11px 18px; }
-    .menu-toggle {
-      display: none; width: 44px; height: 44px; border-radius: 10px; border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06); color: #fff; cursor: pointer; align-items: center; justify-content: center;
-    }
+    .nav .btn { padding: 11px 20px; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: #fff; cursor: pointer; align-items: center; justify-content: center; }
 
     /* ---------- Hero ---------- */
     .hero {
-      position: relative; color: #fff; overflow: hidden;
+      position: relative; color: #fff; overflow: hidden; padding: 170px 0 130px;
       background:
-        radial-gradient(900px 500px at 85% 10%, rgba(47,124,246,.35), transparent 60%),
-        radial-gradient(700px 500px at 0% 100%, rgba(42,212,230,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 10%, rgba(var(--brand-rgb),.28), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(var(--accent-rgb),.14), transparent 60%),
         linear-gradient(180deg, var(--navy-950), var(--navy-900) 70%, var(--navy-800));
-      padding: 170px 0 120px;
     }
+    /* server-rack texture, echoing the photo on the current site */
     .hero::before {
-      content: ""; position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(ellipse at 60% 40%, #000 30%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse at 60% 40%, #000 30%, transparent 75%);
+      content: ""; position: absolute; inset: 0; opacity: .5;
+      background:
+        repeating-linear-gradient(90deg, transparent 0 150px, rgba(255,255,255,.035) 150px 152px, transparent 152px 300px),
+        repeating-linear-gradient(0deg, transparent 0 22px, rgba(255,255,255,.025) 22px 23px),
+        radial-gradient(circle, rgba(var(--accent-rgb),.5) 1px, transparent 1.6px) 0 0 / 38px 46px;
+      mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%);
     }
-    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
     .badge {
-      display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px;
-      border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
-      font-size: 14px; font-weight: 600; color: #d6e3fa;
+      display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 7px; border-radius: 999px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); font-size: 14px; font-weight: 600; color: #d6e3fa;
     }
-    .badge b {
-      background: linear-gradient(135deg, #f5c84b, #e5a51a); color: #3b2800; font-size: 11px; letter-spacing: .08em;
-      padding: 4px 9px; border-radius: 999px; text-transform: uppercase;
-    }
-    .hero h1 { font-size: clamp(38px, 5.6vw, 66px); font-weight: 800; margin: 26px 0 22px; }
-    .grad { background: linear-gradient(90deg, #6fb0ff, var(--cyan-400)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-lead { font-size: 19px; color: #b9c8e4; max-width: 560px; }
+    .badge b { white-space: nowrap; flex-shrink: 0; background: var(--brand-grad); color: #fff; font-size: 11px; letter-spacing: .08em; padding: 5px 10px; border-radius: 999px; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(38px, 5.4vw, 64px); font-weight: 800; margin: 26px 0 22px; }
+    .grad { background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-lead { font-size: 19px; color: #c1cfe6; max-width: 580px; }
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
-    .hero-points { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 40px; color: #a9bde0; font-size: 15px; font-weight: 500; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 40px; color: #a9b9d3; font-size: 15px; font-weight: 500; }
     .hero-points span { display: inline-flex; align-items: center; gap: 8px; }
     .hero-points svg { width: 18px; height: 18px; color: var(--cyan-400); }
 
-    .hero-visual { position: relative; aspect-ratio: 1 / 1; max-width: 540px; width: 100%; justify-self: end; }
-    .hero-visual .glow { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle, rgba(47,124,246,.45), transparent 65%); filter: blur(20px); }
-    .net-line { stroke: rgba(111,176,255,.35); stroke-width: 1.4; }
+    .hero-visual { position: relative; aspect-ratio: 1 / 1; max-width: 520px; width: 100%; justify-self: end; }
+    .hero-visual .glow { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle, rgba(var(--brand-rgb),.42), transparent 65%); filter: blur(20px); }
+    .net-line { stroke: rgba(var(--accent-rgb),.3); stroke-width: 1.4; }
     .net-pulse { stroke: var(--cyan-400); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 10 300; animation: pulse 3.6s linear infinite; }
-    .net-pulse.d2 { animation-delay: -1.2s; }
-    .net-pulse.d3 { animation-delay: -2.4s; }
+    .net-pulse.d2 { animation-delay: -1.2s; } .net-pulse.d3 { animation-delay: -2.4s; }
     @keyframes pulse { to { stroke-dashoffset: -310; } }
-    .node-ring { fill: none; stroke: rgba(111,176,255,.4); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: ring 3s ease-out infinite; }
+    .node-ring { fill: none; stroke: rgba(var(--accent-rgb),.4); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: ring 3s ease-out infinite; }
     @keyframes ring { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(2.2); opacity: 0; } }
     .float { animation: float 6s ease-in-out infinite; }
     @keyframes float { 50% { transform: translateY(-10px); } }
-
     .hero-card {
-      position: absolute; display: flex; align-items: center; gap: 12px;
-      background: rgba(13, 30, 66, .78); border: 1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow-lg);
-      font-size: 13px; color: #c7d5ef;
+      position: absolute; display: flex; align-items: center; gap: 12px; background: rgba(15, 32, 56, .82);
+      border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow-lg); font-size: 13px; color: #c1cfe6;
     }
     .hero-card strong { display: block; color: #fff; font-size: 15px; }
-    .hero-card .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: rgba(42,212,230,.15); color: var(--cyan-400); }
+    .hero-card .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: rgba(var(--accent-rgb),.15); color: var(--cyan-400); }
     .hero-card .ic svg { width: 20px; height: 20px; }
     .hero-card.c1 { top: 2%; left: -6%; animation: float 7s ease-in-out infinite; }
     .hero-card.c2 { bottom: 10%; right: -2%; animation: float 8s ease-in-out infinite -2s; }
     .dot-live { width: 8px; height: 8px; border-radius: 50%; background: #3ee08f; box-shadow: 0 0 0 4px rgba(62,224,143,.2); }
 
-    /* ---------- Stats strip ---------- */
-    .stats { position: relative; margin-top: -56px; z-index: 2; }
-    .stats-card {
-      background: #fff; border-radius: 22px; box-shadow: var(--shadow-lg);
-      display: grid; grid-template-columns: repeat(4, 1fr); padding: 34px 12px;
-    }
+    /* ---------- Stats ---------- */
+    .stats { position: relative; margin-top: -60px; z-index: 2; }
+    .stats-card { background: #fff; border-radius: 22px; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: repeat(4, 1fr); padding: 34px 12px; }
     .stat { text-align: center; padding: 0 16px; border-right: 1px solid var(--line); }
     .stat:last-child { border-right: 0; }
     .stat .num { font-size: clamp(32px, 4vw, 44px); font-weight: 800; color: var(--navy-900); letter-spacing: -0.03em; }
     .stat .num em { font-style: normal; color: var(--blue-500); }
     .stat .lbl { color: var(--ink-soft); font-weight: 600; font-size: 14px; margin-top: 4px; }
 
-    /* ---------- Services ---------- */
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service {
-      position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 32px; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; overflow: hidden;
-    }
-    .service::after {
-      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
-      background: linear-gradient(90deg, var(--blue-500), var(--cyan-400));
-      transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
-    }
-    .service:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
-    .service:hover::after { transform: scaleX(1); }
-    .service .ic {
-      width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 22px;
-      background: linear-gradient(135deg, rgba(47,124,246,.12), rgba(42,212,230,.12)); color: var(--blue-500);
-    }
-    .service .ic svg { width: 28px; height: 28px; }
-    .service h3 { font-size: 21px; margin-bottom: 10px; }
-    .service p { color: var(--ink-soft); font-size: 15.5px; }
-    .service ul { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 8px; }
-    .service li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; font-weight: 500; color: #2d3d58; }
-    .service li::before {
-      content: ""; flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; border-radius: 50%;
-      background: rgba(47,124,246,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f7cf6' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat;
+    /* ---------- Brands marquee ---------- */
+    .brands { padding: 72px 0 24px; }
+    .brands h2 { text-align: center; font-size: 24px; font-weight: 800; margin-bottom: 28px; }
+    .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    .marquee-track { display: flex; gap: 18px; width: max-content; animation: marquee 32s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee { to { transform: translateX(calc(-50% - 9px)); } }
+    .brand-chip {
+      min-width: 160px; padding: 20px 28px; border-radius: 14px; background: var(--bg-soft); border: 1px solid var(--line);
+      text-align: center; font-weight: 800; font-size: 17px; color: #22314d; letter-spacing: -0.01em; white-space: nowrap;
     }
 
-    /* ---------- Partner band ---------- */
-    .partner {
-      position: relative; overflow: hidden; border-radius: 28px; color: #fff;
+    /* ---------- Institutions ---------- */
+    .inst-top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: end; margin-bottom: 56px; }
+    .inst-top .section-head { margin-bottom: 0; }
+    .assure { display: grid; gap: 12px; }
+    .assure div { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; font-weight: 700; font-size: 15px; color: #22314d; }
+    .assure svg { width: 22px; height: 22px; color: var(--blue-500); flex-shrink: 0; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pillar { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; transition: transform .3s ease, box-shadow .3s ease; }
+    .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .pillar .ic { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 20px; background: var(--navy-900); color: var(--cyan-400); }
+    .pillar .ic svg { width: 26px; height: 26px; }
+    .pillar h3 { font-size: 19px; margin-bottom: 8px; }
+    .pillar p { color: var(--ink-soft); font-size: 15px; }
+
+    /* ---------- Solutions & Partners (dark band, as on the current site) ---------- */
+    .dark {
+      color: #fff;
       background:
-        radial-gradient(600px 300px at 100% 0%, rgba(42,212,230,.25), transparent 60%),
-        linear-gradient(135deg, var(--navy-900), var(--navy-700));
-      display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; padding: 64px;
+        radial-gradient(700px 360px at 100% 0%, rgba(var(--brand-rgb),.22), transparent 60%),
+        radial-gradient(600px 300px at 0% 100%, rgba(var(--accent-rgb),.12), transparent 60%),
+        linear-gradient(180deg, var(--navy-900), var(--navy-800));
     }
-    .partner h2 { font-size: clamp(28px, 3.6vw, 40px); margin: 14px 0 16px; }
-    .partner p { color: #b9c8e4; font-size: 17px; }
-    .partner .eyebrow { color: var(--cyan-400); }
-    .partner-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
-    .partner-list div { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; color: #e3ecfb; }
-    .partner-list svg { width: 20px; height: 20px; color: var(--cyan-400); flex-shrink: 0; }
-    .medal {
-      justify-self: center; width: 100%; max-width: 300px; aspect-ratio: 1; border-radius: 50%;
-      display: grid; place-items: center; text-align: center; position: relative;
-      background: radial-gradient(circle at 30% 25%, #ffe9a6, #e9b434 45%, #b07d0e 100%);
-      box-shadow: 0 30px 60px -20px rgba(0,0,0,.6), inset 0 -10px 30px rgba(0,0,0,.25), inset 0 8px 20px rgba(255,255,255,.4);
-      color: #3b2800;
+    .solutions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .solution {
+      position: relative; padding: 30px 26px; border-radius: var(--radius);
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+      transition: transform .3s ease, background .3s ease, border-color .3s ease;
     }
-    .medal::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; border: 2px dashed rgba(59,40,0,.35); }
-    .medal .hp { font-size: 68px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-style: italic; }
-    .medal .tier { font-size: 22px; font-weight: 800; letter-spacing: .3em; margin-top: 6px; }
-    .medal .sub { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .75; margin-top: 6px; }
+    .solution:hover { transform: translateY(-6px); background: rgba(255,255,255,.07); border-color: rgba(var(--accent-rgb),.45); }
+    .solution::before { content: ""; display: block; width: 34px; height: 3px; border-radius: 3px; background: var(--brand-grad); margin-bottom: 22px; }
+    .solution .ic { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; background: rgba(var(--accent-rgb),.12); color: var(--cyan-400); margin-bottom: 18px; }
+    .solution .ic svg { width: 26px; height: 26px; }
+    .solution h3 { font-size: 19px; margin-bottom: 10px; }
+    .solution p { color: #a9b9d3; font-size: 15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tags span { font-size: 12.5px; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); color: #dce6f6; }
+    .deliver { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1); }
+    .deliver div { display: flex; align-items: center; gap: 12px; font-weight: 700; color: #e3ecfb; font-size: 15.5px; }
+    .deliver svg { width: 22px; height: 22px; color: var(--cyan-400); flex-shrink: 0; }
 
-    /* ---------- Why us ---------- */
-    .why { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; }
-    .why-visual {
-      position: relative; border-radius: 26px; overflow: hidden; aspect-ratio: 4 / 4.4;
-      background: linear-gradient(160deg, var(--navy-800), var(--navy-950));
-      box-shadow: var(--shadow-lg);
-    }
-    .rack { position: absolute; inset: 11% 22%; display: grid; gap: 10px; align-content: center; }
-    .rack div {
-      height: 34px; border-radius: 6px; background: linear-gradient(180deg, #1b2f5c, #13254b);
-      border: 1px solid rgba(255,255,255,.08); position: relative;
-    }
-    .rack div::before {
-      content: ""; position: absolute; left: 12px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%;
-      background: #3ee08f; box-shadow: 14px 0 0 #3ee08f, 28px 0 0 var(--cyan-400);
-      animation: blink 1.8s steps(2) infinite;
-    }
-    .rack div:nth-child(2n)::before { animation-delay: -.6s; }
-    .rack div:nth-child(3n)::before { animation-delay: -1.1s; }
-    .rack div::after {
-      content: ""; position: absolute; right: 12px; top: 50%; height: 4px; width: 45%; margin-top: -2px; border-radius: 4px;
-      background: repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 3px, transparent 3px 6px);
-    }
-    @keyframes blink { 50% { opacity: .35; } }
-    .why-visual .tag {
-      position: absolute; left: 24px; right: 24px; bottom: 24px; background: rgba(255,255,255,.96); color: var(--ink);
-      border-radius: 16px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow);
-    }
-    .why-visual .tag .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--blue-500); color: #fff; display: grid; place-items: center; flex-shrink: 0; }
-    .why-visual .tag .ic svg { width: 24px; height: 24px; }
-    .why-visual .tag strong { display: block; font-size: 16px; }
-    .why-visual .tag span { color: var(--ink-soft); font-size: 14px; }
-    .why-items { display: grid; gap: 26px; margin-top: 36px; }
-    .why-item { display: flex; gap: 18px; }
-    .why-item .n {
-      flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
-      background: var(--bg-soft); border: 1px solid var(--line); color: var(--blue-500); font-weight: 800;
-    }
-    .why-item h3 { font-size: 19px; margin-bottom: 6px; }
-    .why-item p { color: var(--ink-soft); font-size: 15.5px; }
+    /* ---------- About ---------- */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .story, .ceo { border-radius: 22px; padding: 40px; }
+    .story { background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .story h3, .ceo h3 { font-size: 22px; margin-bottom: 18px; }
+    .story p { color: var(--ink-soft); font-size: 16px; margin-bottom: 14px; }
+    .story .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+    .story .facts div { background: var(--bg-soft); border-radius: 14px; padding: 16px; text-align: center; }
+    .story .facts strong { display: block; font-size: 22px; font-weight: 800; color: var(--navy-900); }
+    .story .facts span { font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+    .ceo { position: relative; color: #fff; overflow: hidden; background: linear-gradient(150deg, var(--navy-800), var(--navy-950)); box-shadow: var(--shadow-lg); }
+    .ceo::after { content: "\201C"; position: absolute; right: 24px; top: -30px; font-size: 220px; font-family: Georgia, serif; line-height: 1; color: rgba(var(--accent-rgb),.12); }
+    .ceo p { color: #c1cfe6; font-size: 16px; margin-bottom: 14px; position: relative; }
+    .ceo blockquote { margin: 24px 0 0; padding: 18px 22px; border-left: 3px solid var(--cyan-400); background: rgba(255,255,255,.05); border-radius: 0 12px 12px 0; font-size: 19px; font-weight: 700; color: #fff; }
+    .ceo .sign { margin-top: 22px; font-size: 14px; color: #a9b9d3; font-weight: 600; }
 
     /* ---------- Process ---------- */
-    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; position: relative; }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .step { position: relative; padding: 30px 26px; background: #fff; border-radius: var(--radius); border: 1px solid var(--line); }
-    .step .num {
-      font-size: 14px; font-weight: 800; color: #fff; width: 40px; height: 40px; border-radius: 50%;
-      display: grid; place-items: center; margin-bottom: 18px;
-      background: linear-gradient(135deg, var(--blue-500), var(--cyan-400));
-      box-shadow: 0 8px 18px -6px rgba(47,124,246,.6);
-    }
+    .step .num { font-size: 14px; font-weight: 800; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 18px; background: var(--brand-grad); box-shadow: 0 8px 18px -6px rgba(var(--brand-rgb),.6); }
     .step h3 { font-size: 18px; margin-bottom: 8px; }
     .step p { color: var(--ink-soft); font-size: 15px; }
 
-    /* ---------- Industries ---------- */
+    /* ---------- Who we serve ---------- */
     .industries { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 999px;
-      background: #fff; border: 1px solid var(--line); font-weight: 600; color: #22314d;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
-    }
+    .chip { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 600; color: #22314d; transition: border-color .2s, transform .2s, box-shadow .2s; }
     .chip:hover { border-color: var(--blue-400); transform: translateY(-2px); box-shadow: var(--shadow); }
     .chip svg { width: 20px; height: 20px; color: var(--blue-500); }
 
+    /* ---------- Future vision ---------- */
+    .vision { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .vcard { display: flex; gap: 22px; padding: 34px; border-radius: 22px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .vcard .n { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-grad); color: #fff; font-weight: 800; }
+    .vcard h3 { font-size: 20px; margin-bottom: 8px; }
+    .vcard p { color: var(--ink-soft); font-size: 15.5px; }
+    .vcard .flags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .vcard .flags span { font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: rgba(var(--brand-rgb),.1); color: var(--blue-500); }
+
     /* ---------- CTA ---------- */
-    .cta {
-      text-align: center; color: #fff; border-radius: 28px; padding: 72px 32px; position: relative; overflow: hidden;
-      background:
-        radial-gradient(500px 260px at 15% 0%, rgba(42,212,230,.3), transparent 60%),
-        radial-gradient(500px 260px at 85% 100%, rgba(79,149,255,.35), transparent 60%),
-        linear-gradient(135deg, #1650c4, var(--navy-800));
-    }
+    .cta { text-align: center; color: #fff; border-radius: 28px; padding: 72px 32px; position: relative; overflow: hidden;
+      background: radial-gradient(500px 260px at 15% 0%, rgba(var(--accent-rgb),.3), transparent 60%), radial-gradient(500px 260px at 85% 100%, rgba(var(--brand-rgb),.4), transparent 60%), linear-gradient(135deg, var(--navy-700), var(--navy-900)); }
     .cta h2 { font-size: clamp(28px, 4vw, 42px); max-width: 720px; margin: 0 auto 16px; }
-    .cta p { color: #d2defa; font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
-    .cta .btn-primary { background: #fff; color: var(--navy-900); box-shadow: 0 12px 28px -10px rgba(0,0,0,.4); }
+    .cta p { color: #c9d6ec; font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
 
     /* ---------- Contact ---------- */
     .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; }
     .contact-info { display: grid; gap: 16px; align-content: start; }
     .info-card { display: flex; gap: 16px; align-items: flex-start; padding: 22px; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
-    .info-card .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(47,124,246,.1); color: var(--blue-500); flex-shrink: 0; }
+    .info-card .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(var(--brand-rgb),.1); color: var(--blue-500); flex-shrink: 0; }
     .info-card .ic svg { width: 22px; height: 22px; }
-    .info-card h3 { font-size: 15px; color: var(--ink-soft); font-weight: 600; margin-bottom: 4px; }
-    .info-card a, .info-card p { font-weight: 700; font-size: 16.5px; color: var(--ink); word-break: break-word; }
+    .info-card h3 { font-size: 14px; color: var(--ink-soft); font-weight: 600; margin-bottom: 4px; }
+    .info-card a, .info-card p { font-weight: 700; font-size: 16px; color: var(--ink); word-break: break-word; }
     .info-card a:hover { color: var(--blue-500); }
-    .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); height: 220px; background: var(--bg-soft); }
-    .map iframe { width: 100%; height: 100%; border: 0; filter: saturate(.9); }
+    .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); height: 230px; background: var(--bg-soft); }
+    .map iframe { width: 100%; height: 100%; border: 0; }
     form.card { background: #fff; border-radius: 22px; padding: 38px; box-shadow: var(--shadow); border: 1px solid var(--line); }
     form.card h3 { font-size: 24px; margin-bottom: 6px; }
     form.card > p { color: var(--ink-soft); margin-bottom: 26px; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .field { display: grid; gap: 7px; margin-bottom: 16px; }
     .field label { font-size: 14px; font-weight: 700; color: #22314d; }
-    .field input, .field select, .field textarea {
-      width: 100%; font: inherit; font-size: 15px; color: var(--ink); padding: 13px 15px; border-radius: 11px;
-      border: 1px solid #d5ddeb; background: #fbfcfe; transition: border-color .2s, box-shadow .2s, background .2s;
-    }
+    .field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 15px; color: var(--ink); padding: 13px 15px; border-radius: 11px; border: 1px solid #d5ddeb; background: #fbfcfe; transition: border-color .2s, box-shadow .2s, background .2s; }
     .field textarea { min-height: 130px; resize: vertical; }
-    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue-500); background: #fff; box-shadow: 0 0 0 4px rgba(47,124,246,.14); }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue-500); background: #fff; box-shadow: 0 0 0 4px rgba(var(--brand-rgb),.14); }
     form.card .btn { width: 100%; margin-top: 6px; }
     .form-note { font-size: 13px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
     .form-ok { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: #e8f8ef; color: #17643c; font-weight: 600; font-size: 14px; text-align: center; }
     .form-ok.show { display: block; }
 
     /* ---------- Footer ---------- */
-    footer { background: var(--navy-950); color: #9fb1d1; padding: 72px 0 28px; }
-    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+    footer { background: var(--navy-950); color: #9fb0cc; padding: 72px 0 28px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
     footer h4 { color: #fff; font-size: 15px; margin: 0 0 18px; }
     footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 15px; }
     footer a:hover { color: #fff; }
     .foot-about p { margin-top: 18px; font-size: 15px; max-width: 320px; }
     .foot-bottom { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; }
-    .to-top {
-      position: fixed; right: 22px; bottom: 22px; width: 48px; height: 48px; border-radius: 14px; border: 0;
-      background: var(--blue-500); color: #fff; display: grid; place-items: center; cursor: pointer; z-index: 40;
-      box-shadow: 0 12px 24px -8px rgba(47,124,246,.7);
-      opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .3s, transform .3s;
-    }
+    .to-top { position: fixed; right: 22px; bottom: 22px; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--brand-grad); color: #fff; display: grid; place-items: center; cursor: pointer; z-index: 40; box-shadow: 0 12px 24px -8px rgba(var(--brand-rgb),.7); opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .3s, transform .3s; }
     .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
     .to-top svg { width: 22px; height: 22px; }
 
@@ -367,7 +303,6 @@
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.in { opacity: 1; transform: none; }
     .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
-
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -375,69 +310,71 @@
     }
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 1080px) {
+    @media (max-width: 1140px) {
       .nav-links { display: none; }
       .menu-toggle { display: inline-flex; }
-      .nav-links.open {
-        display: flex; flex-direction: column; align-items: stretch; position: absolute; top: 100%; left: 16px; right: 16px;
-        background: var(--navy-900); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 10px; box-shadow: var(--shadow-lg);
-      }
-      .nav-links.open a { padding: 14px 16px; }
-      .hero-grid, .why, .contact, .partner { grid-template-columns: 1fr; }
-      .hero-visual { justify-self: center; max-width: 460px; }
-      .services { grid-template-columns: repeat(2, 1fr); }
-      .process { grid-template-columns: repeat(2, 1fr); }
+      .nav-links.open { display: flex; flex-direction: column; align-items: stretch; position: absolute; top: 100%; left: 16px; right: 16px; background: var(--navy-900); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 10px; box-shadow: var(--shadow-lg); }
+      .nav-links.open a { padding: 14px 16px; border-radius: 10px; }
+    }
+    @media (max-width: 1024px) {
+      .hero-grid, .contact, .about, .inst-top, .vision { grid-template-columns: 1fr; }
+      .inst-top { gap: 32px; }
+      .hero-visual { justify-self: center; max-width: 440px; }
+      .pillars, .solutions, .process, .deliver { grid-template-columns: repeat(2, 1fr); }
       .foot-grid { grid-template-columns: 1fr 1fr; }
-      .why-visual { max-width: 520px; width: 100%; margin: 0 auto; }
-      .partner { padding: 48px 36px; }
     }
     @media (max-width: 720px) {
       .container { padding: 0 16px; }
       .section { padding: 80px 0; }
-      .hero { padding: 130px 0 100px; }
+      .hero { padding: 130px 0 110px; }
       .nav .btn { display: none; }
-      .brand-text span { display: none; }
       .stats-card { grid-template-columns: 1fr 1fr; row-gap: 28px; padding: 28px 8px; }
       .stat:nth-child(2) { border-right: 0; }
-      .services, .process, .row, .partner-list { grid-template-columns: 1fr; }
+      .pillars, .solutions, .process, .deliver, .row, .story .facts { grid-template-columns: 1fr; }
       .hero-card { display: none; }
-      .partner { padding: 40px 24px; }
+      .story, .ceo { padding: 28px 22px; }
+      .vcard { flex-direction: column; padding: 26px 22px; }
       form.card { padding: 26px 20px; }
       .foot-grid { grid-template-columns: 1fr; }
       .cta { padding: 56px 20px; }
+      .brand-chip { min-width: 130px; padding: 16px 20px; font-size: 15px; }
     }
   </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--blue-500)"/><stop offset="1" style="stop-color:var(--cyan-400)"/></linearGradient>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <!-- Simplified line mark. Replace with the official First Solution logo file when available. -->
+    <symbol id="mark" viewBox="0 0 40 34"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M3 8l17 8 17-8"/><path d="M3 8v15l17 8 17-8V8"/><path d="M11 4l9 4 9-4"/><path d="M13 20l5 4 9-9"/></g></symbol>
+  </defs>
+</svg>
+
 <!-- ================= HEADER ================= -->
 <header class="header" id="header">
   <div class="container nav">
     <a href="#home" class="brand" aria-label="First Solution home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f95ff"/><stop offset="1" stop-color="#2ad4e6"/></linearGradient></defs>
-        <rect width="40" height="40" rx="11" fill="url(#lg)"/>
-        <path d="M13 29V11h14M13 20h10" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="28.5" cy="27.5" r="3" fill="#fff"/>
-      </svg>
-      <span class="brand-text"><strong>First Solution</strong><span>L.L.C. · KOSOVO</span></span>
+      <svg class="brand-mark"><use href="#mark"/></svg>
+      <span class="wordmark"><span>First</span><span>Solution</span></span>
     </a>
-
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" data-i18n="nav.home">Home</a></li>
-      <li><a href="#services" data-i18n="nav.services">Services</a></li>
-      <li><a href="#partner" data-i18n="nav.partner">HP Partner</a></li>
-      <li><a href="#about" data-i18n="nav.about">About</a></li>
-      <li><a href="#process" data-i18n="nav.process">How we work</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="#institutions" data-i18n="nav.inst">Institutions</a></li>
+      <li><a href="#solutions" data-i18n="nav.solutions">Solutions &amp; Partners</a></li>
+      <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+      <li><a href="#vision" data-i18n="nav.vision">Future Vision</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li>
     </ul>
-
     <div class="nav-actions">
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="on">EN</button>
         <button type="button" data-lang="sq">SQ</button>
       </div>
-      <a href="#contact" class="btn btn-primary" data-i18n="nav.quote">Get a quote</a>
+      <a href="#contact" class="btn btn-primary" data-i18n="nav.quote">Request an offer</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -450,18 +387,17 @@
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <span class="badge reveal"><b>HP Gold</b> <span data-i18n="hero.badge">Certified HP Gold Partner in Kosovo</span></span>
-      <h1 class="reveal d1"><span data-i18n="hero.title1">Reliable IT infrastructure,</span> <span class="grad" data-i18n="hero.title2">built to keep your business running.</span></h1>
-      <p class="hero-lead reveal d2" data-i18n="hero.lead">First Solution designs, supplies and supports the technology behind businesses and institutions across Kosovo — from workstations and servers to secure, high-performance networks.</p>
+      <span class="badge reveal"><b>15+ yrs</b> <span data-i18n="hero.badge">Trusted by institutions &amp; businesses in Kosovo</span></span>
+      <h1 class="reveal d1"><span data-i18n="hero.title1">The trusted IT partner for institutions,</span> <span class="grad" data-i18n="hero.title2">built on over 15 years of expertise.</span></h1>
+      <p class="hero-lead reveal d2" data-i18n="hero.lead">First Solution L.L.C. is the strategic partner of public institutions and businesses for high-end Hardware, Networking and System Integration in Kosovo and beyond: delivered on time, to specification and with official manufacturer warranty.</p>
       <div class="hero-cta reveal d3">
-        <a href="#contact" class="btn btn-primary"><span data-i18n="hero.cta1">Request a consultation</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Explore our services</a>
+        <a href="#solutions" class="btn btn-primary"><span data-i18n="hero.cta1">Explore Our Solutions</span><svg><use href="#arrow"/></svg></a>
+        <a href="#institutions" class="btn btn-ghost" data-i18n="hero.cta2">Why institutions choose us</a>
       </div>
       <div class="hero-points reveal d3">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.p1">15+ years of experience</span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.p2">Official vendor warranty</span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.p3">Local on-site support</span></span>
+        <span><svg><use href="#check"/></svg><span data-i18n="hero.p1">Public tender experience</span></span>
+        <span><svg><use href="#check"/></svg><span data-i18n="hero.p2">Genuine, warrantied equipment</span></span>
+        <span><svg><use href="#check"/></svg><span data-i18n="hero.p3">Local support in Prishtina</span></span>
       </div>
     </div>
 
@@ -469,10 +405,8 @@
       <div class="glow"></div>
       <svg viewBox="0 0 500 500" class="float">
         <defs>
-          <linearGradient id="hub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f95ff"/><stop offset="1" stop-color="#2ad4e6"/></linearGradient>
-          <linearGradient id="nd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3a78"/><stop offset="1" stop-color="#11244d"/></linearGradient>
+          <linearGradient id="nd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16304f"/><stop offset="1" stop-color="#0c1b31"/></linearGradient>
         </defs>
-        <!-- links -->
         <g class="net-line">
           <path d="M250 250 L110 120"/><path d="M250 250 L400 110"/><path d="M250 250 L420 300"/>
           <path d="M250 250 L330 420"/><path d="M250 250 L120 390"/><path d="M250 250 L70 260"/>
@@ -483,40 +417,31 @@
           <path class="net-pulse d2" d="M400 110 L250 250 L120 390"/>
           <path class="net-pulse d3" d="M70 260 L250 250 L330 420"/>
         </g>
-        <!-- outer nodes -->
         <g>
           <circle class="node-ring" cx="110" cy="120" r="26"/>
-          <circle cx="110" cy="120" r="26" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <rect x="97" y="110" width="26" height="17" rx="2" fill="none" stroke="#9cc3ff" stroke-width="2"/><path d="M104 131h12" stroke="#9cc3ff" stroke-width="2" stroke-linecap="round"/>
-
-          <circle cx="400" cy="110" r="26" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <path d="M389 104h22M389 112h22M389 120h22" stroke="#9cc3ff" stroke-width="2" stroke-linecap="round"/><circle cx="393" cy="104" r="1.6" fill="#3ee08f"/>
-
+          <circle cx="110" cy="120" r="26" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <rect x="97" y="110" width="26" height="17" rx="2" fill="none" stroke="#9fdcf7" stroke-width="2"/><path d="M104 131h12" stroke="#9fdcf7" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="400" cy="110" r="26" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <path d="M389 104h22M389 112h22M389 120h22" stroke="#9fdcf7" stroke-width="2" stroke-linecap="round"/><circle cx="393" cy="104" r="1.6" fill="#3ee08f"/>
           <circle class="node-ring" cx="420" cy="300" r="26" style="animation-delay:-1s"/>
-          <circle cx="420" cy="300" r="26" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <path d="M410 296a14 14 0 0 1 20 0M414 301a8 8 0 0 1 12 0" stroke="#9cc3ff" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="420" cy="306" r="2" fill="#9cc3ff"/>
-
-          <circle cx="330" cy="420" r="26" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <path d="M330 408l11 5v7c0 7-5 11-11 13-6-2-11-6-11-13v-7z" fill="none" stroke="#9cc3ff" stroke-width="2" stroke-linejoin="round"/>
-
+          <circle cx="420" cy="300" r="26" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <path d="M410 296a14 14 0 0 1 20 0M414 301a8 8 0 0 1 12 0" stroke="#9fdcf7" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="420" cy="306" r="2" fill="#9fdcf7"/>
+          <circle cx="330" cy="420" r="26" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <path d="M330 408l11 5v7c0 7-5 11-11 13-6-2-11-6-11-13v-7z" fill="none" stroke="#9fdcf7" stroke-width="2" stroke-linejoin="round"/>
           <circle class="node-ring" cx="120" cy="390" r="26" style="animation-delay:-2s"/>
-          <circle cx="120" cy="390" r="26" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <rect x="110" y="380" width="20" height="16" rx="2" fill="none" stroke="#9cc3ff" stroke-width="2"/><path d="M114 400h12" stroke="#9cc3ff" stroke-width="2" stroke-linecap="round"/>
-
-          <circle cx="70" cy="260" r="22" fill="url(#nd)" stroke="rgba(111,176,255,.5)"/>
-          <path d="M60 256c4-8 16-8 20 0M64 262c3-4 9-4 12 0" stroke="#9cc3ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="120" cy="390" r="26" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <path d="M111 384h18l-2 12h-14zM116 380v4M124 380v4" fill="none" stroke="#9fdcf7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="70" cy="260" r="22" fill="url(#nd)" stroke="rgba(86,204,242,.45)"/>
+          <path d="M60 256c4-8 16-8 20 0M64 262c3-4 9-4 12 0" stroke="#9fdcf7" stroke-width="2" fill="none" stroke-linecap="round"/>
         </g>
-        <!-- hub -->
-        <circle class="node-ring" cx="250" cy="250" r="58"/>
-        <circle cx="250" cy="250" r="58" fill="url(#hub)"/>
-        <circle cx="250" cy="250" r="46" fill="none" stroke="rgba(255,255,255,.35)" stroke-dasharray="3 6"/>
-        <path d="M233 270V230h34M233 250h22" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="268" cy="267" r="6" fill="#fff"/>
+        <circle class="node-ring" cx="250" cy="250" r="60"/>
+        <circle cx="250" cy="250" r="60" fill="url(#bg-grad)"/>
+        <circle cx="250" cy="250" r="48" fill="none" stroke="rgba(255,255,255,.35)" stroke-dasharray="3 6"/>
+        <use href="#mark" x="222" y="226" width="56" height="48" style="color:#fff"/>
       </svg>
-
       <div class="hero-card c1">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <div><strong data-i18n="hero.c1t">Network secured</strong><span data-i18n="hero.c1s">Firewall · VPN · Backup</span></div>
+        <span class="ic"><svg><use href="#shield"/></svg></span>
+        <div><strong data-i18n="hero.c1t">Project delivered</strong><span data-i18n="hero.c1s">On time · To specification</span></div>
       </div>
       <div class="hero-card c2">
         <span class="dot-live"></span>
@@ -530,152 +455,208 @@
 <div class="stats">
   <div class="container">
     <div class="stats-card reveal">
-      <div class="stat"><div class="num"><span data-count="15">15</span><em>+</em></div><div class="lbl" data-i18n="stats.years">Years in IT</div></div>
-      <div class="stat"><div class="num"><em>HP</em> Gold</div><div class="lbl" data-i18n="stats.partner">Certified partner</div></div>
-      <div class="stat"><div class="num"><span data-count="6">6</span></div><div class="lbl" data-i18n="stats.areas">Core service areas</div></div>
-      <div class="stat"><div class="num"><span data-count="100">100</span><em>%</em></div><div class="lbl" data-i18n="stats.genuine">Genuine, warrantied hardware</div></div>
+      <div class="stat"><div class="num"><span data-count="15">15</span><em>+</em></div><div class="lbl" data-i18n="stats.years">Years of expertise</div></div>
+      <div class="stat"><div class="num"><span data-count="9">9</span><em>+</em></div><div class="lbl" data-i18n="stats.brands">Leading global brands</div></div>
+      <div class="stat"><div class="num"><span data-count="3">3</span></div><div class="lbl" data-i18n="stats.focus">Core areas: integration, hardware, networking</div></div>
+      <div class="stat"><div class="num"><span data-count="100">100</span><em>%</em></div><div class="lbl" data-i18n="stats.genuine">Genuine, warrantied equipment</div></div>
     </div>
   </div>
 </div>
 
-<!-- ================= SERVICES ================= -->
-<section class="section" id="services">
+<!-- ================= BRANDS ================= -->
+<section class="brands" aria-label="Brands">
+  <div class="container"><h2 class="reveal" data-i18n="brands.title">The Brands We Trust</h2></div>
+  <div class="marquee reveal">
+    <div class="marquee-track" id="marquee">
+      <span class="brand-chip">HP</span><span class="brand-chip">DELL</span><span class="brand-chip">Lenovo</span>
+      <span class="brand-chip">Cisco</span><span class="brand-chip">Microsoft</span><span class="brand-chip">Check Point</span>
+      <span class="brand-chip">APC</span><span class="brand-chip">TP-Link</span><span class="brand-chip">Omada</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTITUTIONS ================= -->
+<section class="section" id="institutions">
+  <div class="container">
+    <div class="inst-top">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="inst.eyebrow">Built for institutions</span>
+        <h2 data-i18n="inst.title">A partner institutions can rely on, contract after contract</h2>
+        <p data-i18n="inst.lead">Public institutions need more than good prices. They need a supplier that meets every specification, respects every deadline and stands behind every device for the full warranty period. That is how we have worked for over 15 years.</p>
+      </div>
+      <div class="assure reveal d1">
+        <div><svg><use href="#shield"/></svg><span data-i18n="inst.a1">Compliant with public procurement requirements</span></div>
+        <div><svg><use href="#shield"/></svg><span data-i18n="inst.a2">Genuine products through official vendor channels</span></div>
+        <div><svg><use href="#shield"/></svg><span data-i18n="inst.a3">Complete documentation at every delivery</span></div>
+      </div>
+    </div>
+    <div class="pillars">
+      <article class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+        <h3 data-i18n="inst.p1t">Public tender experience</h3>
+        <p data-i18n="inst.p1d">We prepare complete, compliant offers and deliver exactly to the technical specification and contract terms.</p>
+      </article>
+      <article class="pillar reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></div>
+        <h3 data-i18n="inst.p2t">Trusted global brands</h3>
+        <p data-i18n="inst.p2d">Genuine, traceable equipment from HP, Dell, Lenovo, Cisco and more, with official manufacturer warranty.</p>
+      </article>
+      <article class="pillar reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3 data-i18n="inst.p3t">Security &amp; data protection</h3>
+        <p data-i18n="inst.p3d">Check Point firewalls, Microsoft licensing and secure configuration to protect sensitive public data.</p>
+      </article>
+      <article class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3 data-i18n="inst.p4t">On-time delivery</h3>
+        <p data-i18n="inst.p4d">Clear timelines, reliable logistics and coordinated installation, even for large multi-site rollouts.</p>
+      </article>
+      <article class="pillar reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3 data-i18n="inst.p5t">Transparent documentation</h3>
+        <p data-i18n="inst.p5d">Delivery notes, warranty certificates and handover reports, ready for audits and inventory.</p>
+      </article>
+      <article class="pillar reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5a2 2 0 0 0 3 3l5.8-5.8a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div>
+        <h3 data-i18n="inst.p6t">Support for the full contract</h3>
+        <p data-i18n="inst.p6d">Our team in Prishtina provides on-site and remote support throughout the warranty and beyond.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLUTIONS & PARTNERS ================= -->
+<section class="section dark" id="solutions">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow" data-i18n="svc.eyebrow">What we do</span>
-      <h2 data-i18n="svc.title">End-to-end IT solutions under one roof</h2>
-      <p data-i18n="svc.lead">One trusted partner for planning, supplying, installing and maintaining your technology, so your team can focus on its work.</p>
+      <span class="eyebrow" data-i18n="sol.eyebrow">Solutions &amp; Partners</span>
+      <h2 data-i18n="sol.title">More than equipment: the components for your success</h2>
+      <p data-i18n="sol.lead">We provide more than just equipment; we provide the components for your success, from the first specification to years of reliable operation.</p>
     </div>
-
-    <div class="services">
-      <article class="service reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/></svg></div>
-        <h3 data-i18n="svc.s1.t">System Integration</h3>
-        <p data-i18n="svc.s1.d">We design and deploy complete IT environments where hardware, software and networks work together seamlessly.</p>
-        <ul><li data-i18n="svc.s1.l1">Infrastructure design &amp; planning</li><li data-i18n="svc.s1.l2">Turnkey project delivery</li><li data-i18n="svc.s1.l3">Migration &amp; modernization</li></ul>
-      </article>
-
-      <article class="service reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-        <h3 data-i18n="svc.s2.t">Hardware Supply</h3>
-        <p data-i18n="svc.s2.d">Genuine business-class hardware from leading brands, with official warranty and competitive pricing.</p>
-        <ul><li data-i18n="svc.s2.l1">Desktops, laptops &amp; workstations</li><li data-i18n="svc.s2.l2">Printers &amp; multifunction devices</li><li data-i18n="svc.s2.l3">Monitors, peripherals &amp; accessories</li></ul>
-      </article>
-
-      <article class="service reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="5" rx="1"/><rect x="2.5" y="16.5" width="6" height="5" rx="1"/><rect x="15.5" y="16.5" width="6" height="5" rx="1"/><path d="M12 7.5V12M5.5 16.5V12h13v4.5"/></svg></div>
-        <h3 data-i18n="svc.s3.t">Networking</h3>
-        <p data-i18n="svc.s3.d">Fast, stable and secure wired and wireless networks, from a single office to multi-site organizations.</p>
-        <ul><li data-i18n="svc.s3.l1">LAN / WAN &amp; Wi-Fi design</li><li data-i18n="svc.s3.l2">Structured cabling</li><li data-i18n="svc.s3.l3">Switching, routing &amp; VPN</li></ul>
-      </article>
-
-      <article class="service reveal">
+    <div class="solutions">
+      <article class="solution reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="7" rx="1.5"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></svg></div>
-        <h3 data-i18n="svc.s4.t">Servers &amp; Storage</h3>
-        <p data-i18n="svc.s4.d">Scalable server, storage and virtualization platforms sized for your workloads and growth.</p>
-        <ul><li data-i18n="svc.s4.l1">Rack &amp; tower servers</li><li data-i18n="svc.s4.l2">Storage, NAS &amp; backup</li><li data-i18n="svc.s4.l3">Virtualization</li></ul>
+        <h3 data-i18n="sol.s1t">Enterprise Computing</h3>
+        <p data-i18n="sol.s1d">High-performance servers, storage and workstations from HP, DELL and Lenovo.</p>
+        <div class="tags"><span>HP</span><span>DELL</span><span>Lenovo</span></div>
       </article>
-
-      <article class="service reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3 data-i18n="svc.s5.t">Security &amp; Backup</h3>
-        <p data-i18n="svc.s5.d">Protect your data and operations with layered security and reliable backup and recovery.</p>
-        <ul><li data-i18n="svc.s5.l1">Firewalls &amp; endpoint protection</li><li data-i18n="svc.s5.l2">Backup &amp; disaster recovery</li><li data-i18n="svc.s5.l3">Access control &amp; policies</li></ul>
+      <article class="solution reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="5" rx="1"/><rect x="2.5" y="16.5" width="6" height="5" rx="1"/><rect x="15.5" y="16.5" width="6" height="5" rx="1"/><path d="M12 7.5V12M5.5 16.5V12h13v4.5"/></svg></div>
+        <h3 data-i18n="sol.s2t">Networking Excellence</h3>
+        <p data-i18n="sol.s2d">Robust wired and wireless infrastructure using Cisco, TP-Link and Omada solutions.</p>
+        <div class="tags"><span>Cisco</span><span>TP-Link</span><span>Omada</span></div>
       </article>
-
-      <article class="service reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5a2 2 0 0 0 3 3l5.8-5.8a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div>
-        <h3 data-i18n="svc.s6.t">Support &amp; Maintenance</h3>
-        <p data-i18n="svc.s6.d">Responsive local technicians who keep your systems healthy, updated and running at their best.</p>
-        <ul><li data-i18n="svc.s6.l1">On-site &amp; remote support</li><li data-i18n="svc.s6.l2">Preventive maintenance</li><li data-i18n="svc.s6.l3">Warranty &amp; repair service</li></ul>
+      <article class="solution reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3 data-i18n="sol.s3t">Business Continuity</h3>
+        <p data-i18n="sol.s3d">Uninterrupted power supply and protection with APC systems, so critical services never stop.</p>
+        <div class="tags"><span>APC</span></div>
       </article>
+      <article class="solution reveal d3">
+        <div class="ic"><svg><use href="#shield"/></svg></div>
+        <h3 data-i18n="sol.s4t">Software &amp; Security</h3>
+        <p data-i18n="sol.s4d">Official Microsoft licensing and enterprise-grade firewall protection from Check Point.</p>
+        <div class="tags"><span>Microsoft</span><span>Check Point</span></div>
+      </article>
+    </div>
+    <div class="deliver reveal">
+      <div><svg><use href="#check"/></svg><span data-i18n="sol.d1">IT System Integration</span></div>
+      <div><svg><use href="#check"/></svg><span data-i18n="sol.d2">Hardware Reselling</span></div>
+      <div><svg><use href="#check"/></svg><span data-i18n="sol.d3">Networking</span></div>
+      <div><svg><use href="#check"/></svg><span data-i18n="sol.d4">Installation &amp; Support</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= HP PARTNER ================= -->
-<section class="section section-soft" id="partner">
+<!-- ================= ABOUT ================= -->
+<section class="section section-soft" id="about">
   <div class="container">
-    <div class="partner reveal">
-      <div>
-        <span class="eyebrow" data-i18n="hp.eyebrow">Official partnership</span>
-        <h2 data-i18n="hp.title">Certified HP Gold Partner</h2>
-        <p data-i18n="hp.lead">As an HP Gold Partner for Business Personal Systems, we give our clients direct access to HP's business portfolio, official warranty and partner pricing, backed by certified local expertise.</p>
-        <div class="partner-list">
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hp.l1">Business laptops &amp; desktops</span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hp.l2">Workstations &amp; displays</span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hp.l3">Official warranty &amp; care packs</span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hp.l4">Partner pricing for projects</span></div>
-        </div>
-      </div>
-      <div class="medal" aria-label="HP Gold Partner">
-        <div>
-          <div class="hp">hp</div>
-          <div class="tier">GOLD</div>
-          <div class="sub" data-i18n="hp.medal">Partner</div>
-        </div>
-      </div>
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="about.eyebrow">About Us</span>
+      <h2 data-i18n="about.title">Built to last, like everything we deliver</h2>
     </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT / WHY ================= -->
-<section class="section" id="about">
-  <div class="container why">
-    <div class="why-visual reveal" aria-hidden="true">
-      <div class="rack"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-      <div class="tag">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
-        <div><strong data-i18n="why.tagT">Prishtina, Kosovo</strong><span data-i18n="why.tagS">Serving clients nationwide</span></div>
-      </div>
-    </div>
-
-    <div>
-      <div class="section-head reveal" style="margin-bottom:0">
-        <span class="eyebrow" data-i18n="why.eyebrow">Why First Solution</span>
-        <h2 data-i18n="why.title">More than 15 years of turning IT challenges into solutions</h2>
-        <p data-i18n="why.lead">We are a Kosovo-based IT company founded on a simple idea: give every client the right solution the first time. Our team combines certified vendor expertise with practical, hands-on experience.</p>
-      </div>
-      <div class="why-items">
-        <div class="why-item reveal d1"><span class="n">01</span><div><h3 data-i18n="why.i1t">Certified expertise</h3><p data-i18n="why.i1d">Vendor-certified engineers and an official HP Gold partnership mean you get solutions done right.</p></div></div>
-        <div class="why-item reveal d2"><span class="n">02</span><div><h3 data-i18n="why.i2t">One partner, full lifecycle</h3><p data-i18n="why.i2d">From consultation and procurement to installation and support, with a single point of contact.</p></div></div>
-        <div class="why-item reveal d3"><span class="n">03</span><div><h3 data-i18n="why.i3t">Fast, local support</h3><p data-i18n="why.i3d">Based in Prishtina, our technicians respond quickly on-site or remotely when you need them.</p></div></div>
-      </div>
+    <div class="about">
+      <article class="story reveal">
+        <h3 data-i18n="about.storyT">Our Story</h3>
+        <p data-i18n="about.story1">With more than 15 years in the IT market, First Solution L.L.C. has grown alongside the digital landscape of Kosovo. We started with a simple belief: that IT systems should be built to last.</p>
+        <p data-i18n="about.story2">We approach technology like an architect approaches a building, prioritizing a solid foundation, quality materials and a structure that can handle growth.</p>
+        <div class="facts">
+          <div><strong>15+</strong><span data-i18n="about.f1">Years in IT</span></div>
+          <div><strong>9+</strong><span data-i18n="about.f2">Global brands</span></div>
+          <div><strong>KS</strong><span data-i18n="about.f3">Based in Prishtina</span></div>
+        </div>
+      </article>
+      <article class="ceo reveal d1">
+        <h3 data-i18n="about.ceoT">A Message from Our CEO</h3>
+        <p data-i18n="about.ceo1">With proven experience of more than 15 years in the IT industry in Kosovo and across the region, one thing is clear: technology only works when you can actually rely on it.</p>
+        <p data-i18n="about.ceo2">First Solution L.L.C. was created not just to sell hardware, but to help businesses and institutions grow with a rock-solid IT foundation. Whether setting up networks or providing equipment from brands like HP, Dell, Lenovo or Cisco, every project is treated as a long-term partnership.</p>
+        <blockquote data-i18n="about.quote">“Our business, helping your business.”</blockquote>
+        <div class="sign" data-i18n="about.sign">CEO, First Solution L.L.C.</div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ================= PROCESS ================= -->
-<section class="section section-soft" id="process">
+<section class="section" id="process">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="proc.eyebrow">How we work</span>
-      <h2 data-i18n="proc.title">A clear process from first call to final handover</h2>
+      <h2 data-i18n="proc.title">A clear process from specification to handover</h2>
     </div>
     <div class="process">
-      <div class="step reveal"><div class="num">1</div><h3 data-i18n="proc.s1t">Consultation</h3><p data-i18n="proc.s1d">We listen, assess your current setup and understand your goals and budget.</p></div>
-      <div class="step reveal d1"><div class="num">2</div><h3 data-i18n="proc.s2t">Solution design</h3><p data-i18n="proc.s2d">We propose the right hardware, software and architecture with a transparent quote.</p></div>
+      <div class="step reveal"><div class="num">1</div><h3 data-i18n="proc.s1t">Needs &amp; specification</h3><p data-i18n="proc.s1d">We assess your current setup and help define clear technical requirements and budget.</p></div>
+      <div class="step reveal d1"><div class="num">2</div><h3 data-i18n="proc.s2t">Offer &amp; tender</h3><p data-i18n="proc.s2d">We submit a complete, compliant offer with the right hardware, software and architecture.</p></div>
       <div class="step reveal d2"><div class="num">3</div><h3 data-i18n="proc.s3t">Delivery &amp; setup</h3><p data-i18n="proc.s3d">Our team supplies, installs and configures everything with minimal disruption.</p></div>
-      <div class="step reveal d3"><div class="num">4</div><h3 data-i18n="proc.s4t">Ongoing support</h3><p data-i18n="proc.s4d">We stay with you through maintenance, warranty service and future upgrades.</p></div>
+      <div class="step reveal d3"><div class="num">4</div><h3 data-i18n="proc.s4t">Long-term support</h3><p data-i18n="proc.s4d">We stay with you through maintenance, warranty service and future upgrades.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= INDUSTRIES ================= -->
-<section class="section" id="industries">
+<!-- ================= WHO WE SERVE ================= -->
+<section class="section section-soft" id="clients">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="ind.eyebrow">Who we serve</span>
-      <h2 data-i18n="ind.title">Trusted by organizations of every size</h2>
+      <h2 data-i18n="ind.title">Serving the institutions and businesses that keep Kosovo running</h2>
     </div>
     <div class="industries reveal">
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span data-i18n="ind.i1">Public institutions</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg><span data-i18n="ind.i2">Corporate &amp; SMEs</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-5h6v5"/></svg><span data-i18n="ind.i3">Banking &amp; finance</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span data-i18n="ind.i1">Ministries &amp; government agencies</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-5h6v5"/></svg><span data-i18n="ind.i2">Municipalities</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span data-i18n="ind.i3">Public enterprises</span></span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg><span data-i18n="ind.i4">Education</span></span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg><span data-i18n="ind.i5">Healthcare</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9h18v11H3zM9 13h6"/></svg><span data-i18n="ind.i6">Retail &amp; distribution</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span data-i18n="ind.i7">NGOs &amp; international organizations</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span data-i18n="ind.i6">Banking &amp; finance</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span data-i18n="ind.i7">International organizations &amp; NGOs</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg><span data-i18n="ind.i8">Businesses &amp; system integrators</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUTURE VISION ================= -->
+<section class="section" id="vision">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="vis.eyebrow">Future Vision</span>
+      <h2 data-i18n="vis.title">Always looking at what's next</h2>
+      <p data-i18n="vis.lead">At First Solution L.L.C., we keep investing in how we serve our clients, today and tomorrow.</p>
+    </div>
+    <div class="vision">
+      <article class="vcard reveal">
+        <span class="n">01</span>
+        <div>
+          <h3 data-i18n="vis.v1t">The E-commerce Platform</h3>
+          <p data-i18n="vis.v1d">We are developing a large online IT marketplace with a rich catalogue of hardware and software for businesses, institutions and system integrators.</p>
+        </div>
+      </article>
+      <article class="vcard reveal d1">
+        <span class="n">02</span>
+        <div>
+          <h3 data-i18n="vis.v2t">Regional Presence</h3>
+          <p data-i18n="vis.v2d">Proudly rooted in Prishtina, we are expanding toward Albania and North Macedonia, bringing our over 15 years of expertise to the region.</p>
+          <div class="flags"><span data-i18n="vis.c1">Kosovo</span><span data-i18n="vis.c2">Albania</span><span data-i18n="vis.c3">North Macedonia</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -684,54 +665,51 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="cta reveal">
-      <h2 data-i18n="cta.title">Planning a new IT project or upgrade?</h2>
-      <p data-i18n="cta.lead">Tell us what you need. We will get back to you with a tailored proposal and a transparent quote.</p>
-      <a href="#contact" class="btn btn-primary"><span data-i18n="cta.btn">Talk to our team</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <h2 data-i18n="cta.title">Preparing a tender or an IT procurement?</h2>
+      <p data-i18n="cta.lead">Send us your requirements or technical specification. We will respond with a compliant, competitive offer.</p>
+      <a href="#contact" class="btn btn-primary"><span data-i18n="cta.btn">Talk to our team</span><svg><use href="#arrow"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
-<!-- TODO: confirm phone number and street address with the client before going live -->
 <section class="section section-soft" id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="ct.eyebrow">Contact</span>
+      <span class="eyebrow" data-i18n="ct.eyebrow">Contact Us</span>
       <h2 data-i18n="ct.title">Let's build your next solution together</h2>
       <p data-i18n="ct.lead">Reach out by phone, email or the form, and our team will respond within one business day.</p>
     </div>
-
     <div class="contact">
       <div class="contact-info reveal">
+        <div class="info-card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <div><h3 data-i18n="ct.office">Address</h3><p data-i18n="ct.address">St. Xhevdet Doda, Dukagjini CENTER, 10000 Prishtina, Kosovo</p></div>
+        </div>
+        <div class="info-card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><h3 data-i18n="ct.phone">Phone</h3><a href="tel:+38345999015">+383 45 999 015</a></div>
+        </div>
         <div class="info-card">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
           <div><h3 data-i18n="ct.email">Email</h3><a href="mailto:info@firstsolution-ks.com">info@firstsolution-ks.com</a></div>
         </div>
         <div class="info-card">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
-          <div><h3 data-i18n="ct.phone">Phone</h3><a href="tel:+38349000000" id="phoneLink">+383 49 000 000</a></div>
-        </div>
-        <div class="info-card">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-          <div><h3 data-i18n="ct.office">Office</h3><p data-i18n="ct.address">Prishtinë 10000, Kosovo</p></div>
-        </div>
-        <div class="info-card">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><h3 data-i18n="ct.hours">Working hours</h3><p data-i18n="ct.hoursV">Mon – Fri · 08:00 – 17:00</p></div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div><h3 data-i18n="ct.focus">Focus</h3><p data-i18n="ct.focusV">IT System Integration | Hardware Reselling | Networking</p></div>
         </div>
         <div class="map">
-          <iframe title="Map: Prishtina, Kosovo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Prishtina%2C%20Kosovo&z=13&output=embed"></iframe>
+          <iframe title="Map: Dukagjini Center, Prishtina" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Dukagjini%20Center%2C%20Xhevdet%20Doda%2C%20Prishtina&z=16&output=embed"></iframe>
         </div>
       </div>
 
       <form class="card reveal d1" id="contactForm" novalidate>
-        <h3 data-i18n="form.title">Request a quote</h3>
-        <p data-i18n="form.lead">Share a few details and we'll prepare the right solution for you.</p>
+        <h3 data-i18n="form.title">Request an offer</h3>
+        <p data-i18n="form.lead">Share a few details and we'll prepare the right solution for your institution or business.</p>
         <div class="row">
           <div class="field"><label for="f-name" data-i18n="form.name">Full name</label><input id="f-name" name="name" required autocomplete="name"></div>
-          <div class="field"><label for="f-company" data-i18n="form.company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="f-company" data-i18n="form.company">Institution / company</label><input id="f-company" name="company" autocomplete="organization"></div>
         </div>
         <div class="row">
           <div class="field"><label for="f-email" data-i18n="form.email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
@@ -740,18 +718,17 @@
         <div class="field">
           <label for="f-topic" data-i18n="form.topic">I'm interested in</label>
           <select id="f-topic" name="topic">
-            <option data-i18n="svc.s1.t">System Integration</option>
-            <option data-i18n="svc.s2.t">Hardware Supply</option>
-            <option data-i18n="svc.s3.t">Networking</option>
-            <option data-i18n="svc.s4.t">Servers &amp; Storage</option>
-            <option data-i18n="svc.s5.t">Security &amp; Backup</option>
-            <option data-i18n="svc.s6.t">Support &amp; Maintenance</option>
+            <option data-i18n="form.tender">Public tender / procurement</option>
+            <option data-i18n="sol.s1t">Enterprise Computing</option>
+            <option data-i18n="sol.s2t">Networking Excellence</option>
+            <option data-i18n="sol.s3t">Business Continuity</option>
+            <option data-i18n="sol.s4t">Software &amp; Security</option>
+            <option data-i18n="sol.d1">IT System Integration</option>
             <option data-i18n="form.other">Other</option>
           </select>
         </div>
         <div class="field"><label for="f-msg" data-i18n="form.msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
-        <button type="submit" class="btn btn-primary"><span data-i18n="form.send">Send request</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button type="submit" class="btn btn-primary"><span data-i18n="form.send">Send request</span><svg><use href="#arrow"/></svg></button>
         <div class="form-ok" id="formOk" role="status" data-i18n="form.ok">Thank you! Your email app has opened with your request. Just press send.</div>
         <p class="form-note" data-i18n="form.note">We respect your privacy and never share your data.</p>
       </form>
@@ -765,28 +742,25 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-about">
-        <a href="#home" class="brand">
-          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M13 29V11h14M13 20h10" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="28.5" cy="27.5" r="3" fill="#fff"/></svg>
-          <span class="brand-text"><strong>First Solution</strong><span>L.L.C. · KOSOVO</span></span>
-        </a>
-        <p data-i18n="ft.about">IT system integration, hardware supply, networking and support for businesses and institutions in Kosovo.</p>
+        <a href="#home" class="brand"><svg class="brand-mark"><use href="#mark"/></svg><span class="wordmark"><span>First</span><span>Solution</span></span></a>
+        <p data-i18n="ft.about">The trusted IT partner of institutions and businesses in Kosovo: IT system integration, hardware reselling and networking.</p>
       </div>
       <div>
         <h4 data-i18n="ft.company">Company</h4>
-        <ul><li><a href="#about" data-i18n="nav.about">About</a></li><li><a href="#partner" data-i18n="nav.partner">HP Partner</a></li><li><a href="#process" data-i18n="nav.process">How we work</a></li><li><a href="#contact" data-i18n="nav.contact">Contact</a></li></ul>
+        <ul><li><a href="#about" data-i18n="nav.about">About Us</a></li><li><a href="#institutions" data-i18n="nav.inst">Institutions</a></li><li><a href="#vision" data-i18n="nav.vision">Future Vision</a></li><li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li></ul>
       </div>
       <div>
-        <h4 data-i18n="nav.services">Services</h4>
-        <ul><li><a href="#services" data-i18n="svc.s1.t">System Integration</a></li><li><a href="#services" data-i18n="svc.s2.t">Hardware Supply</a></li><li><a href="#services" data-i18n="svc.s3.t">Networking</a></li><li><a href="#services" data-i18n="svc.s6.t">Support &amp; Maintenance</a></li></ul>
+        <h4 data-i18n="nav.solutions">Solutions &amp; Partners</h4>
+        <ul><li><a href="#solutions" data-i18n="sol.s1t">Enterprise Computing</a></li><li><a href="#solutions" data-i18n="sol.s2t">Networking Excellence</a></li><li><a href="#solutions" data-i18n="sol.s3t">Business Continuity</a></li><li><a href="#solutions" data-i18n="sol.s4t">Software &amp; Security</a></li></ul>
       </div>
       <div>
         <h4 data-i18n="ft.contact">Get in touch</h4>
-        <ul><li><a href="mailto:info@firstsolution-ks.com">info@firstsolution-ks.com</a></li><li><a href="tel:+38349000000">+383 49 000 000</a></li><li data-i18n="ct.address">Prishtinë 10000, Kosovo</li></ul>
+        <ul><li><a href="mailto:info@firstsolution-ks.com">info@firstsolution-ks.com</a></li><li><a href="tel:+38345999015">+383 45 999 015</a></li><li data-i18n="ct.address">St. Xhevdet Doda, Dukagjini CENTER, 10000 Prishtina, Kosovo</li></ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> First Solution L.L.C. <span data-i18n="ft.rights">All rights reserved.</span></span>
-      <span data-i18n="ft.tag">Your first solution in IT.</span>
+      <span data-i18n="ft.tag">Our business, helping your business.</span>
     </div>
   </div>
 </footer>
@@ -796,89 +770,92 @@
 </button>
 
 <script>
-  /* ---------- Translations ---------- */
+  /* ---------- Albanian translations ---------- */
   const SQ = {
-    "nav.home": "Ballina", "nav.services": "Shërbimet", "nav.partner": "Partner HP", "nav.about": "Rreth nesh",
-    "nav.process": "Si punojmë", "nav.contact": "Kontakti", "nav.quote": "Kërko ofertë",
-    "hero.badge": "Partner i certifikuar HP Gold në Kosovë",
-    "hero.title1": "Infrastrukturë IT e besueshme,",
-    "hero.title2": "e ndërtuar për ta mbajtur biznesin tuaj në lëvizje.",
-    "hero.lead": "First Solution projekton, furnizon dhe mirëmban teknologjinë që qëndron pas bizneseve dhe institucioneve në mbarë Kosovën, nga stacionet e punës dhe serverët deri te rrjetet e sigurta dhe me performancë të lartë.",
-    "hero.cta1": "Kërko një konsultim", "hero.cta2": "Shiko shërbimet tona",
-    "hero.p1": "Mbi 15 vjet përvojë", "hero.p2": "Garanci zyrtare nga prodhuesi", "hero.p3": "Mbështetje lokale në terren",
-    "hero.c1t": "Rrjeti i siguruar", "hero.c1s": "Firewall · VPN · Backup",
+    "nav.home": "Ballina", "nav.inst": "Institucionet", "nav.solutions": "Zgjidhjet & Partnerët", "nav.about": "Rreth Nesh",
+    "nav.vision": "Vizioni", "nav.contact": "Kontakti", "nav.quote": "Kërko ofertë",
+    "hero.badge": "I besuar nga institucionet dhe bizneset në Kosovë",
+    "hero.title1": "Partneri i besuar IT për institucionet,",
+    "hero.title2": "i ndërtuar mbi më shumë se 15 vjet ekspertizë.",
+    "hero.lead": "First Solution L.L.C. është partneri strategjik i institucioneve publike dhe bizneseve për pajisje të nivelit të lartë, rrjete dhe integrim sistemesh në Kosovë dhe më gjerë: në kohë, sipas specifikave dhe me garanci zyrtare nga prodhuesi.",
+    "hero.cta1": "Eksploroni zgjidhjet tona", "hero.cta2": "Pse na zgjedhin institucionet",
+    "hero.p1": "Përvojë në tenderë publikë", "hero.p2": "Pajisje origjinale me garanci", "hero.p3": "Mbështetje lokale në Prishtinë",
+    "hero.c1t": "Projekti u dorëzua", "hero.c1s": "Në kohë · Sipas specifikave",
     "hero.c2t": "Të gjitha sistemet funksionale", "hero.c2s": "Të monitoruara dhe të mbështetura",
-    "stats.years": "Vjet në IT", "stats.partner": "Partner i certifikuar", "stats.areas": "Fusha kryesore shërbimi", "stats.genuine": "Pajisje origjinale me garanci",
-    "svc.eyebrow": "Çfarë bëjmë", "svc.title": "Zgjidhje IT të plota në një vend",
-    "svc.lead": "Një partner i besuar për planifikimin, furnizimin, instalimin dhe mirëmbajtjen e teknologjisë suaj, që ekipi juaj të fokusohet te puna.",
-    "svc.s1.t": "Integrim Sistemesh", "svc.s1.d": "Projektojmë dhe implementojmë mjedise të plota IT ku pajisjet, softueri dhe rrjetet funksionojnë në harmoni.",
-    "svc.s1.l1": "Projektim dhe planifikim i infrastrukturës", "svc.s1.l2": "Realizim i projekteve “çelës në dorë”", "svc.s1.l3": "Migrim dhe modernizim",
-    "svc.s2.t": "Furnizim me Pajisje", "svc.s2.d": "Pajisje origjinale të klasit biznes nga markat kryesore, me garanci zyrtare dhe çmime konkurruese.",
-    "svc.s2.l1": "Desktopë, laptopë dhe stacione pune", "svc.s2.l2": "Printerë dhe pajisje multifunksionale", "svc.s2.l3": "Monitorë, periferikë dhe aksesorë",
-    "svc.s3.t": "Rrjete", "svc.s3.d": "Rrjete me kabllo dhe pa tela, të shpejta, stabile dhe të sigurta, nga një zyrë e vetme deri te organizata me shumë lokacione.",
-    "svc.s3.l1": "Projektim LAN / WAN dhe Wi-Fi", "svc.s3.l2": "Kabllim i strukturuar", "svc.s3.l3": "Switching, routing dhe VPN",
-    "svc.s4.t": "Serverë dhe Ruajtje e të Dhënave", "svc.s4.d": "Platforma serverësh, ruajtjeje dhe virtualizimi të shkallëzueshme, të përshtatura për nevojat dhe rritjen tuaj.",
-    "svc.s4.l1": "Serverë rack dhe tower", "svc.s4.l2": "Storage, NAS dhe backup", "svc.s4.l3": "Virtualizim",
-    "svc.s5.t": "Siguri dhe Backup", "svc.s5.d": "Mbroni të dhënat dhe operacionet tuaja me siguri në shumë shtresa dhe backup e rikthim të besueshëm.",
-    "svc.s5.l1": "Firewall dhe mbrojtje e pajisjeve", "svc.s5.l2": "Backup dhe rikthim nga fatkeqësitë", "svc.s5.l3": "Kontroll qasjeje dhe politika",
-    "svc.s6.t": "Mbështetje dhe Mirëmbajtje", "svc.s6.d": "Teknikë lokalë që reagojnë shpejt dhe i mbajnë sistemet tuaja të shëndetshme, të përditësuara dhe në performancë maksimale.",
-    "svc.s6.l1": "Mbështetje në vend dhe në distancë", "svc.s6.l2": "Mirëmbajtje parandaluese", "svc.s6.l3": "Shërbim garancie dhe riparime",
-    "hp.eyebrow": "Partneritet zyrtar", "hp.title": "Partner i certifikuar HP Gold",
-    "hp.lead": "Si Partner HP Gold për Business Personal Systems, u ofrojmë klientëve qasje direkte në portofolin e biznesit të HP-së, garanci zyrtare dhe çmime partneri, të mbështetura nga ekspertizë lokale e certifikuar.",
-    "hp.l1": "Laptopë dhe desktopë biznesi", "hp.l2": "Stacione pune dhe monitorë", "hp.l3": "Garanci zyrtare dhe care packs", "hp.l4": "Çmime partneri për projekte", "hp.medal": "Partner",
-    "why.tagT": "Prishtinë, Kosovë", "why.tagS": "Në shërbim të klientëve në gjithë vendin",
-    "why.eyebrow": "Pse First Solution", "why.title": "Mbi 15 vjet duke i kthyer sfidat e IT-së në zgjidhje",
-    "why.lead": "Jemi një kompani IT me bazë në Kosovë, e themeluar mbi një ide të thjeshtë: t'i japim çdo klienti zgjidhjen e duhur që herën e parë. Ekipi ynë kombinon ekspertizën e certifikuar me përvojë praktike.",
-    "why.i1t": "Ekspertizë e certifikuar", "why.i1d": "Inxhinierë të certifikuar dhe partneritet zyrtar HP Gold, që do të thotë zgjidhje të realizuara si duhet.",
-    "why.i2t": "Një partner për gjithë ciklin", "why.i2d": "Nga konsultimi dhe prokurimi deri te instalimi dhe mbështetja, me një pikë të vetme kontakti.",
-    "why.i3t": "Mbështetje e shpejtë lokale", "why.i3d": "Me bazë në Prishtinë, teknikët tanë reagojnë shpejt në vend ose në distancë kur keni nevojë.",
-    "proc.eyebrow": "Si punojmë", "proc.title": "Një proces i qartë nga telefonata e parë deri te dorëzimi",
-    "proc.s1t": "Konsultim", "proc.s1d": "Ju dëgjojmë, vlerësojmë gjendjen aktuale dhe kuptojmë qëllimet dhe buxhetin tuaj.",
-    "proc.s2t": "Projektim i zgjidhjes", "proc.s2d": "Propozojmë pajisjet, softuerin dhe arkitekturën e duhur me një ofertë transparente.",
+    "stats.years": "Vjet ekspertizë", "stats.brands": "Marka globale kryesore", "stats.focus": "Fusha kryesore: integrim, pajisje, rrjete", "stats.genuine": "Pajisje origjinale me garanci",
+    "brands.title": "Markat që u besojmë",
+    "inst.eyebrow": "Për institucionet", "inst.title": "Një partner tek i cili institucionet mund të mbështeten, kontratë pas kontrate",
+    "inst.lead": "Institucionet publike kanë nevojë për më shumë se çmime të mira. Kanë nevojë për një furnizues që plotëson çdo specifikë, respekton çdo afat dhe qëndron pas çdo pajisjeje gjatë gjithë periudhës së garancisë. Kështu kemi punuar për mbi 15 vjet.",
+    "inst.a1": "Në përputhje me kërkesat e prokurimit publik", "inst.a2": "Produkte origjinale përmes kanaleve zyrtare", "inst.a3": "Dokumentacion i plotë në çdo dorëzim",
+    "inst.p1t": "Përvojë në tenderë publikë", "inst.p1d": "Përgatisim oferta të plota dhe në përputhje, dhe dorëzojmë saktësisht sipas specifikave teknike dhe kushteve të kontratës.",
+    "inst.p2t": "Marka globale të besuara", "inst.p2d": "Pajisje origjinale dhe të gjurmueshme nga HP, Dell, Lenovo, Cisco e të tjera, me garanci zyrtare nga prodhuesi.",
+    "inst.p3t": "Siguri dhe mbrojtje e të dhënave", "inst.p3d": "Firewall Check Point, licencim Microsoft dhe konfigurim i sigurt për të mbrojtur të dhënat e ndjeshme publike.",
+    "inst.p4t": "Dorëzim në kohë", "inst.p4d": "Afate të qarta, logjistikë e besueshme dhe instalim i koordinuar, edhe për projekte të mëdha në shumë lokacione.",
+    "inst.p5t": "Dokumentacion transparent", "inst.p5d": "Fletëdërgesa, certifikata garancie dhe raporte dorëzimi, gati për auditim dhe inventarizim.",
+    "inst.p6t": "Mbështetje gjatë gjithë kontratës", "inst.p6d": "Ekipi ynë në Prishtinë ofron mbështetje në vend dhe në distancë gjatë garancisë dhe më tej.",
+    "sol.eyebrow": "Zgjidhjet & Partnerët", "sol.title": "Më shumë se pajisje: përbërësit e suksesit tuaj",
+    "sol.lead": "Ne ofrojmë më shumë se thjesht pajisje; ofrojmë përbërësit e suksesit tuaj, nga specifikimi i parë deri te vite funksionimi të besueshëm.",
+    "sol.s1t": "Kompjuterë për Ndërmarrje", "sol.s1d": "Serverë, sisteme ruajtjeje dhe stacione pune me performancë të lartë nga HP, DELL dhe Lenovo.",
+    "sol.s2t": "Rrjete të Shkëlqyera", "sol.s2d": "Infrastrukturë e fuqishme me kabllo dhe pa tela me zgjidhje Cisco, TP-Link dhe Omada.",
+    "sol.s3t": "Vazhdimësi e Biznesit", "sol.s3d": "Furnizim i pandërprerë me energji dhe mbrojtje me sistemet APC, që shërbimet kritike të mos ndalen kurrë.",
+    "sol.s4t": "Softuer & Siguri", "sol.s4d": "Licencim zyrtar Microsoft dhe mbrojtje firewall e nivelit të ndërmarrjeve nga Check Point.",
+    "sol.d1": "Integrim i Sistemeve IT", "sol.d2": "Rishitje e Pajisjeve", "sol.d3": "Rrjete", "sol.d4": "Instalim & Mbështetje",
+    "about.eyebrow": "Rreth Nesh", "about.title": "Të ndërtuar për të zgjatur, si çdo gjë që dorëzojmë",
+    "about.storyT": "Historia Jonë",
+    "about.story1": "Me më shumë se 15 vjet në tregun e IT-së, First Solution L.L.C. është rritur së bashku me peizazhin digjital të Kosovës. Filluam me një bindje të thjeshtë: sistemet IT duhet të ndërtohen për të zgjatur.",
+    "about.story2": "Teknologjisë i qasemi ashtu si një arkitekt i qaset një ndërtese, duke i dhënë përparësi një themeli të fortë, materialeve cilësore dhe një strukture që përballon rritjen.",
+    "about.f1": "Vjet në IT", "about.f2": "Marka globale", "about.f3": "Me bazë në Prishtinë",
+    "about.ceoT": "Mesazh nga CEO-ja Ynë",
+    "about.ceo1": "Me përvojë të dëshmuar prej më shumë se 15 vitesh në industrinë e IT-së në Kosovë dhe në rajon, një gjë është e qartë: teknologjia funksionon vetëm kur mund të mbështeteni vërtet tek ajo.",
+    "about.ceo2": "First Solution L.L.C. u krijua jo vetëm për të shitur pajisje, por për t'i ndihmuar bizneset dhe institucionet të rriten mbi një themel IT të palëkundur. Qoftë në ngritjen e rrjeteve apo në furnizimin me pajisje nga marka si HP, Dell, Lenovo ose Cisco, çdo projekt trajtohet si partneritet afatgjatë.",
+    "about.quote": "“Biznesi ynë, në ndihmë të biznesit tuaj.”", "about.sign": "CEO, First Solution L.L.C.",
+    "proc.eyebrow": "Si punojmë", "proc.title": "Një proces i qartë nga specifikimi deri te dorëzimi",
+    "proc.s1t": "Nevojat dhe specifikimi", "proc.s1d": "Vlerësojmë gjendjen aktuale dhe ndihmojmë në përcaktimin e kërkesave teknike dhe buxhetit.",
+    "proc.s2t": "Oferta dhe tenderi", "proc.s2d": "Dorëzojmë një ofertë të plotë dhe në përputhje, me pajisjet, softuerin dhe arkitekturën e duhur.",
     "proc.s3t": "Dorëzim dhe instalim", "proc.s3d": "Ekipi ynë furnizon, instalon dhe konfiguron gjithçka me ndërprerje minimale.",
-    "proc.s4t": "Mbështetje e vazhdueshme", "proc.s4d": "Qëndrojmë pranë jush me mirëmbajtje, shërbim garancie dhe përmirësime të ardhshme.",
-    "ind.eyebrow": "Kë shërbejmë", "ind.title": "Të besuar nga organizata të çdo madhësie",
-    "ind.i1": "Institucione publike", "ind.i2": "Korporata dhe NVM", "ind.i3": "Banka dhe financa", "ind.i4": "Arsim",
-    "ind.i5": "Shëndetësi", "ind.i6": "Tregti dhe distribucion", "ind.i7": "OJQ dhe organizata ndërkombëtare",
-    "cta.title": "Po planifikoni një projekt të ri IT apo përmirësim?", "cta.lead": "Na tregoni çfarë ju nevojitet. Do t'ju kthehemi me një propozim të përshtatur dhe një ofertë transparente.", "cta.btn": "Bisedoni me ekipin tonë",
+    "proc.s4t": "Mbështetje afatgjatë", "proc.s4d": "Qëndrojmë pranë jush me mirëmbajtje, shërbim garancie dhe përmirësime të ardhshme.",
+    "ind.eyebrow": "Kë shërbejmë", "ind.title": "Në shërbim të institucioneve dhe bizneseve që e mbajnë Kosovën në lëvizje",
+    "ind.i1": "Ministri dhe agjenci qeveritare", "ind.i2": "Komuna", "ind.i3": "Ndërmarrje publike", "ind.i4": "Arsim",
+    "ind.i5": "Shëndetësi", "ind.i6": "Banka dhe financa", "ind.i7": "Organizata ndërkombëtare dhe OJQ", "ind.i8": "Biznese dhe integrues sistemesh",
+    "vis.eyebrow": "Vizioni", "vis.title": "Gjithmonë duke parë përpara",
+    "vis.lead": "Në First Solution L.L.C., vazhdojmë të investojmë në mënyrën si u shërbejmë klientëve tanë, sot dhe nesër.",
+    "vis.v1t": "Platforma e Tregtisë Elektronike", "vis.v1d": "Po zhvillojmë një treg të madh online për IT, me një katalog të pasur pajisjesh dhe softuerësh për biznese, institucione dhe integrues sistemesh.",
+    "vis.v2t": "Prani Rajonale", "vis.v2d": "Me rrënjë krenare në Prishtinë, po zgjerohemi drejt Shqipërisë dhe Maqedonisë së Veriut, duke sjellë në rajon mbi 15 vitet tona të ekspertizës.",
+    "vis.c1": "Kosova", "vis.c2": "Shqipëria", "vis.c3": "Maqedonia e Veriut",
+    "cta.title": "Po përgatitni një tender apo prokurim IT?", "cta.lead": "Na dërgoni kërkesat ose specifikimin teknik. Do t'ju përgjigjemi me një ofertë në përputhje dhe konkurruese.", "cta.btn": "Bisedoni me ekipin tonë",
     "ct.eyebrow": "Kontakti", "ct.title": "Le ta ndërtojmë së bashku zgjidhjen tuaj të radhës",
     "ct.lead": "Na kontaktoni me telefon, email ose përmes formularit, dhe ekipi ynë do t'ju përgjigjet brenda një dite pune.",
-    "ct.email": "Email", "ct.phone": "Telefoni", "ct.office": "Zyra", "ct.address": "Prishtinë 10000, Kosovë", "ct.hours": "Orari i punës", "ct.hoursV": "E hënë – E premte · 08:00 – 17:00",
-    "form.title": "Kërko ofertë", "form.lead": "Na jepni disa detaje dhe ne do të përgatisim zgjidhjen e duhur për ju.",
-    "form.name": "Emri dhe mbiemri", "form.company": "Kompania", "form.email": "Email", "form.phone": "Telefoni", "form.topic": "Jam i interesuar për",
-    "form.other": "Tjetër", "form.msg": "Mesazhi", "form.send": "Dërgo kërkesën",
+    "ct.office": "Adresa", "ct.address": "Rr. Xhevdet Doda, Dukagjini CENTER, 10000 Prishtinë, Kosovë", "ct.phone": "Telefoni", "ct.email": "Email",
+    "ct.focus": "Fokusi", "ct.focusV": "Integrim i Sistemeve IT | Rishitje e Pajisjeve | Rrjete",
+    "form.title": "Kërko ofertë", "form.lead": "Na jepni disa detaje dhe ne do të përgatisim zgjidhjen e duhur për institucionin ose biznesin tuaj.",
+    "form.name": "Emri dhe mbiemri", "form.company": "Institucioni / kompania", "form.email": "Email", "form.phone": "Telefoni",
+    "form.topic": "Jam i interesuar për", "form.tender": "Tender publik / prokurim", "form.other": "Tjetër", "form.msg": "Mesazhi", "form.send": "Dërgo kërkesën",
     "form.ok": "Faleminderit! Aplikacioni juaj i email-it u hap me kërkesën tuaj. Thjesht shtypni dërgo.",
     "form.note": "Ne e respektojmë privatësinë tuaj dhe nuk i ndajmë të dhënat tuaja.",
-    "ft.about": "Integrim sistemesh IT, furnizim me pajisje, rrjete dhe mbështetje për bizneset dhe institucionet në Kosovë.",
-    "ft.company": "Kompania", "ft.contact": "Na kontaktoni", "ft.rights": "Të gjitha të drejtat e rezervuara.", "ft.tag": "Zgjidhja juaj e parë në IT."
+    "ft.about": "Partneri i besuar IT i institucioneve dhe bizneseve në Kosovë: integrim sistemesh IT, rishitje pajisjesh dhe rrjete.",
+    "ft.company": "Kompania", "ft.contact": "Na kontaktoni", "ft.rights": "Të gjitha të drejtat e rezervuara.", "ft.tag": "Biznesi ynë, në ndihmë të biznesit tuaj."
   };
   const EN = {};
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const k = el.dataset.i18n;
-    if (!(k in EN)) EN[k] = el.innerHTML;
-  });
-
+  document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (!(k in EN)) EN[k] = el.innerHTML; });
   function setLang(lang) {
     const dict = lang === "sq" ? SQ : EN;
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const v = dict[el.dataset.i18n];
-      if (v != null) el.innerHTML = v;
-    });
+    document.querySelectorAll("[data-i18n]").forEach(el => { const v = dict[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
     document.documentElement.lang = lang;
     document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
     try { localStorage.setItem("fs-lang", lang); } catch (e) {}
   }
   document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-  try { const saved = localStorage.getItem("fs-lang"); if (saved === "sq") setLang("sq"); } catch (e) {}
+  try { if (localStorage.getItem("fs-lang") === "sq") setLang("sq"); } catch (e) {}
+
+  /* ---------- Brand marquee: duplicate items for a seamless loop ---------- */
+  const track = document.getElementById("marquee");
+  const originals = [...track.children];
+  originals.forEach(c => { const copy = c.cloneNode(true); copy.setAttribute("aria-hidden", "true"); track.appendChild(copy); });
 
   /* ---------- Header + back to top ---------- */
   const header = document.getElementById("header");
   const toTop = document.getElementById("toTop");
-  const onScroll = () => {
-    const y = window.scrollY;
-    header.classList.toggle("scrolled", y > 30);
-    toTop.classList.toggle("show", y > 700);
-  };
+  const onScroll = () => { const y = window.scrollY; header.classList.toggle("scrolled", y > 30); toTop.classList.toggle("show", y > 700); };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
@@ -886,17 +863,10 @@
   /* ---------- Mobile menu ---------- */
   const navLinks = document.getElementById("navLinks");
   const menuToggle = document.getElementById("menuToggle");
-  menuToggle.addEventListener("click", () => {
-    const open = navLinks.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", open);
-  });
-  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }));
+  menuToggle.addEventListener("click", () => { const open = navLinks.classList.toggle("open"); menuToggle.setAttribute("aria-expanded", open); });
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { navLinks.classList.remove("open"); menuToggle.setAttribute("aria-expanded", "false"); }));
 
   /* ---------- Active nav link ---------- */
-  const sections = [...document.querySelectorAll("main section[id]")];
   const linkFor = id => navLinks.querySelector(`a[href="#${id}"]`);
   const spy = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -906,7 +876,7 @@
       }
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  sections.forEach(s => spy.observe(s));
+  document.querySelectorAll("main section[id]").forEach(s => spy.observe(s));
 
   /* ---------- Reveal on scroll + counters ---------- */
   const reveal = new IntersectionObserver(entries => {
@@ -918,15 +888,9 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => reveal.observe(el));
-
   function countUp(el) {
-    const target = +el.dataset.count;
-    const dur = 1400, start = performance.now();
-    const tick = now => {
-      const p = Math.min((now - start) / dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(tick);
-    };
+    const target = +el.dataset.count, dur = 1400, start = performance.now();
+    const tick = now => { const p = Math.min((now - start) / dur, 1); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   }
 
@@ -936,8 +900,8 @@
     const f = e.target;
     if (!f.reportValidity()) return;
     const d = Object.fromEntries(new FormData(f));
-    const subject = `Quote request: ${d.topic}${d.company ? " — " + d.company : ""}`;
-    const body = `Name: ${d.name}\nCompany: ${d.company || "-"}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nInterested in: ${d.topic}\n\n${d.message}`;
+    const subject = `Offer request: ${d.topic}${d.company ? " — " + d.company : ""}`;
+    const body = `Name: ${d.name}\nInstitution / company: ${d.company || "-"}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nInterested in: ${d.topic}\n\n${d.message}`;
     window.location.href = `mailto:info@firstsolution-ks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     document.getElementById("formOk").classList.add("show");
   });
