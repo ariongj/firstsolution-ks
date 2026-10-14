@@ -5,10 +5,14 @@ A modern, single-page redesign of [firstsolution-ks.com](http://firstsolution-ks
 ## Features
 - Fully responsive (desktop, tablet, mobile) with a mobile menu
 - English / Albanian (EN / SQ) language switch, remembered per visitor
-- Sections: hero, key figures, brands marquee, institutions, solutions & partners, about us (story + CEO message), process, who we serve, future vision, call to action, contact
+- Sections: hero with live project tracker, brand logo marquee, key figures, institutions, interactive solutions & partners, about us (story + CEO message), process timeline, who we serve, FAQ, future vision, call to action, contact
+- Real brand logos from [Simple Icons](https://simpleicons.org) (CC0) and photography from Unsplash, with gradient fallbacks if an image can't load
 - Quote-request form that opens the visitor's email app pre-filled to `info@firstsolution-ks.com`
 - Scroll animations that respect "reduced motion", SEO and Open Graph meta tags
 - No build step or dependencies: plain HTML, CSS and JS (Google Fonts only)
+
+## Live site
+Published with GitHub Pages from the `gh-pages` branch: https://ariongj.github.io/firstsolution-ks/
 
 ## Run locally
 Open `index.html` in a browser, or serve the folder:
