@@ -4,8 +4,8 @@ A modern, single-page redesign of [firstsolution-ks.com](http://firstsolution-ks
 
 ## Features
 - Fully responsive (desktop, tablet, mobile) with a mobile menu
-- English / Albanian (EN / SQ) language switch, remembered per visitor
-- Sections: hero with live project tracker, brand logo marquee, key figures, institutions, interactive solutions & partners, about us (story + CEO message), process timeline, who we serve, FAQ, future vision, call to action, contact
+- English / Albanian (EN / SQ) language switch; Albanian-language browsers get Albanian automatically, and the choice is remembered
+- Sections: hero with live project tracker, brand logo marquee, key figures, institutions, interactive solutions & partners, typical projects, about us (story + CEO message), process timeline, who we serve, FAQ, future vision with regional map, call to action, contact with a 3-step offer request wizard
 - Real brand logos from [Simple Icons](https://simpleicons.org) (CC0) and photography from Unsplash, with gradient fallbacks if an image can't load
 - Quote-request form that opens the visitor's email app pre-filled to `info@firstsolution-ks.com`
 - Scroll animations that respect "reduced motion", SEO and Open Graph meta tags

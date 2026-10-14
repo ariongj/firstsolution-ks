@@ -293,12 +293,6 @@
     .step h3 { font-size: 19px; margin-bottom: 8px; }
     .step p { color: var(--ink-soft); font-size: 15.5px; max-width: 260px; margin: 0 auto; }
 
-    /* ---------- Who we serve ---------- */
-    .industries { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 1000px; margin: 0 auto; }
-    .chip { display: inline-flex; align-items: center; gap: 10px; padding: 15px 22px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 700; color: #22314d; transition: border-color .25s, transform .25s var(--ease), box-shadow .25s; }
-    .chip:hover { border-color: var(--blue-400); transform: translateY(-3px); box-shadow: var(--shadow); }
-    .chip svg { width: 20px; height: 20px; color: var(--blue-500); }
-
     /* ---------- FAQ ---------- */
     .faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
     .faq-wrap .section-head { margin-bottom: 0; position: sticky; top: 120px; }
@@ -409,6 +403,9 @@
       .tabs { grid-auto-flow: column; grid-auto-columns: minmax(240px, 1fr); overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
       .tabs::-webkit-scrollbar { display: none; }
       .tab.active { transform: none; }
+      .panels { min-height: 0; }
+      .panel { position: relative; inset: auto; display: none; }
+      .panel.active { display: grid; }
       .stats, .pillars, .deliver { grid-template-columns: repeat(2, 1fr); }
       .process { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
       .process::before, .process .line { display: none; }
@@ -429,7 +426,6 @@
       .stat .lbl { font-size: 13.5px; }
       .float-chip { display: none; }
       .dash { padding: 20px; }
-      .panels { min-height: 720px; }
       .panel { grid-template-rows: 180px 1fr; }
       .panel .body { padding: 6px 22px 24px; }
       .panel h3 { font-size: 24px; }
@@ -447,9 +443,121 @@
       .call-fab.show { opacity: 1; transform: none; pointer-events: auto; }
       .to-top { bottom: 18px; right: 16px; }
     }
+
+    /* ---------- Loader ---------- */
+    .loader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--navy-950); transition: opacity .6s var(--ease), visibility .6s; animation: loaderFailsafe .5s 2.8s forwards; }
+    .loader.done { opacity: 0; visibility: hidden; }
+    .loader .lm { width: 74px; height: 63px; color: #fff; stroke-dasharray: 130; stroke-dashoffset: 130; animation: draw 1s var(--ease) forwards; }
+    .loader .lw { margin-top: 16px; font-family: "Oswald", sans-serif; font-weight: 600; letter-spacing: .3em; font-size: 13px; color: #8ea1c0; text-transform: uppercase; opacity: 0; animation: fadeUp .6s .4s var(--ease) forwards; }
+    .loader > div { display: grid; justify-items: center; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    @keyframes loaderFailsafe { to { opacity: 0; visibility: hidden; } }
+    .skip { position: fixed; left: 16px; top: 16px; transform: translateY(-200%); z-index: 101; background: #fff; color: var(--ink); padding: 10px 16px; border-radius: 10px; font-weight: 700; }
+    .skip:focus { transform: none; }
+    :focus-visible { outline: 3px solid rgba(var(--accent-rgb), .7); outline-offset: 3px; }
+    .dash { transition: transform .35s ease-out; transform-style: preserve-3d; }
+    .btn[hidden] { display: none; }
+
+    /* ---------- Typical projects ---------- */
+    .projects { display: grid; grid-template-columns: 1.25fr 1fr 1fr; grid-template-rows: 310px 310px; gap: 20px; }
+    .proj { position: relative; border-radius: 26px; overflow: hidden; color: #fff; isolation: isolate; display: flex; align-items: flex-end; padding: 30px; box-shadow: var(--shadow); }
+    .proj:first-child { grid-row: span 2; }
+    .proj:last-child { grid-column: span 2; }
+    .proj .ph { position: absolute; inset: 0; z-index: -2; transition: transform 1s var(--ease); }
+    .proj::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,13,27,.0) 15%, rgba(6,13,27,.55) 50%, rgba(6,13,27,.94)); }
+    .proj:hover .ph { transform: scale(1.07); }
+    .proj .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan-400); margin-bottom: 10px; }
+    .proj .tag::before { content: ""; width: 18px; height: 2px; background: var(--brand-grad); }
+    .proj h3 { font-size: 24px; margin-bottom: 8px; color: #fff; }
+    .proj:first-child h3 { font-size: 32px; }
+    .proj p { color: #c9d5ea; font-size: 15px; max-width: 470px; }
+    .proj .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .proj .chips span { font-size: 12.5px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(6px); }
+    .proj .go { position: absolute; top: 22px; right: 22px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(6px); transition: background .3s, transform .3s var(--ease); }
+    .proj .go svg { width: 18px; height: 18px; transform: rotate(-45deg); }
+    .proj:hover .go { background: var(--brand-grad); transform: rotate(45deg); }
+
+    /* ---------- Who we serve tiles ---------- */
+    .serve { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .tile { display: flex; align-items: center; gap: 14px; padding: 20px; border-radius: 18px; background: #fff; border: 1px solid var(--line); font-weight: 700; color: #22314d; font-size: 15.5px; line-height: 1.3; transition: transform .3s var(--ease), box-shadow .3s, border-color .3s; }
+    .tile .ic { width: 48px; height: 48px; border-radius: 14px; background: rgba(var(--brand-rgb),.08); color: var(--blue-500); display: grid; place-items: center; flex-shrink: 0; transition: background .3s, color .3s; }
+    .tile .ic svg { width: 23px; height: 23px; }
+    .tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(var(--brand-rgb),.3); }
+    .tile:hover .ic { background: var(--brand-grad); color: #fff; }
+
+    /* ---------- Vision with regional map ---------- */
+    .vision2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; }
+    .vstack { display: grid; gap: 22px; }
+    .vmap { position: relative; border-radius: 28px; overflow: hidden; min-height: 460px; color: #fff; box-shadow: var(--shadow-lg);
+      background: radial-gradient(500px 320px at 70% 25%, rgba(var(--brand-rgb),.28), transparent 60%), linear-gradient(160deg, var(--navy-800), var(--navy-950)); }
+    .vmap svg.rmap { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .vmap .arc { fill: none; stroke: var(--cyan-400); stroke-width: 2; stroke-dasharray: 6 8; animation: dashmove 1.4s linear infinite; }
+    @keyframes dashmove { to { stroke-dashoffset: -28; } }
+    .vmap .pin-ring { fill: none; stroke: rgba(var(--accent-rgb),.6); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: ring 2.6s ease-out infinite; }
+    .vmap .city { font-family: Inter, sans-serif; font-weight: 800; font-size: 15px; fill: #fff; }
+    .vmap .city-sub { font-family: Inter, sans-serif; font-weight: 700; font-size: 11px; fill: #8ea1c0; letter-spacing: .12em; }
+    .vmap .vm-head { position: absolute; left: 28px; top: 26px; right: 28px; }
+    .vmap .vm-head span { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan-400); }
+    .vmap .vm-head strong { display: block; font-size: 22px; margin-top: 6px; }
+    .vmap .legend { position: absolute; left: 28px; bottom: 24px; right: 28px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; font-weight: 700; color: #c6d3e8; }
+    .vmap .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+    .vcard .n { font-size: 64px; }
+
+    /* ---------- Offer wizard ---------- */
+    .wizard fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: none; }
+    .wizard fieldset.active { display: block; animation: stepIn .45s var(--ease); }
+    @keyframes stepIn { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+    .wizard legend { font-size: 19px; font-weight: 800; margin-bottom: 16px; padding: 0; color: var(--ink); }
+    .wiz-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }
+    .wiz-head h3 { margin-bottom: 0 !important; }
+    .wiz-count { color: var(--ink-soft); font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .wiz-bar { height: 6px; border-radius: 6px; background: var(--bg-soft); overflow: hidden; margin-bottom: 28px; }
+    .wiz-bar i { display: block; height: 100%; width: 33.4%; background: var(--brand-grad); border-radius: 6px; transition: width .5s var(--ease); }
+    .opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .opt { position: relative; cursor: pointer; }
+    .opt input { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; opacity: 0; }
+    .opt span { display: flex; align-items: center; gap: 12px; height: 100%; padding: 14px 16px; border: 1px solid #d5ddeb; border-radius: 14px; font-weight: 700; font-size: 14.5px; line-height: 1.3; color: #22314d; transition: border-color .2s, background .2s, box-shadow .2s; }
+    .opt span svg { width: 22px; height: 22px; color: var(--blue-500); flex-shrink: 0; }
+    .opt:hover span { border-color: var(--blue-400); }
+    .opt input:checked + span { border-color: var(--blue-500); background: rgba(var(--brand-rgb),.07); box-shadow: 0 0 0 3px rgba(var(--brand-rgb),.15); }
+    .opt input:focus-visible + span { box-shadow: 0 0 0 4px rgba(var(--brand-rgb),.3); }
+    .hint { color: var(--ink-soft); font-size: 14px; margin: -8px 0 14px; }
+    .seg.multi { margin-bottom: 24px; }
+    .seg.multi input:checked + span::before { content: "\2713\00a0"; }
+    .wizard > p.wiz-err { margin-bottom: 0; }
+    .wiz-err { min-height: 22px; color: #c0392b; font-size: 14px; font-weight: 600; margin: 12px 0 0; }
+    .wiz-nav { display: flex; gap: 12px; margin-top: 6px; }
+    .wiz-nav .btn { flex: 1; margin-top: 0 !important; }
+    .btn-light { background: #fff; border-color: #d5ddeb; color: var(--ink); flex: 0 0 auto !important; width: auto !important; }
+    .btn-light:hover { border-color: var(--ink-soft); }
+    .summary { margin-top: 4px; padding: 16px 18px; border-radius: 14px; background: var(--bg-soft); border: 1px dashed #c8d3e4; font-size: 14px; color: #34445f; display: grid; gap: 4px; }
+    .summary b { color: var(--ink); }
+
+    @media (max-width: 1024px) {
+      .projects { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 300px; }
+      .proj:first-child { grid-row: auto; grid-column: span 2; }
+      .serve { grid-template-columns: repeat(2, 1fr); }
+      .vision2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .projects { grid-template-columns: 1fr; grid-auto-rows: minmax(320px, auto); }
+      .proj:first-child, .proj:last-child { grid-column: auto; }
+      .proj { padding: 24px; }
+      .proj:first-child h3 { font-size: 26px; }
+      .serve { gap: 10px; }
+      .tile { padding: 14px; gap: 10px; font-size: 14px; }
+      .tile .ic { width: 40px; height: 40px; }
+      .vmap { min-height: 400px; }
+      .opts { grid-template-columns: 1fr 1fr; }
+      .opt span { padding: 12px 10px; gap: 8px; font-size: 13px; }
+      .opt span svg { width: 18px; height: 18px; }
+    }
   </style>
 </head>
 <body>
+<div class="loader" id="loader" aria-hidden="true"><div><svg class="lm"><use href="#mark"/></svg><span class="lw">First Solution</span></div></div>
+<a class="skip" href="#institutions">Skip to content</a>
 <div class="progress" id="progress"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -463,6 +571,14 @@
     <symbol id="i-power" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <!-- Simplified line mark. Replace with the official First Solution logo file when available. -->
     <symbol id="mark" viewBox="0 0 40 34"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M3 8l17 8 17-8"/><path d="M3 8v15l17 8 17-8V8"/><path d="M11 4l9 4 9-4"/><path d="M13 20l5 4 9-9"/></g></symbol>
+    <symbol id="i-gov" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-city" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-5h6v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-edu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></g></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></g></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></g></symbol>
+    <symbol id="i-biz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></g></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g></symbol>
     <!-- Brand logos: Simple Icons (CC0), https://simpleicons.org -->
 <symbol id="logo-hp" viewBox="0 0 24 24"><path d="M12.0069 24h-.3572l2.459-6.7453h3.3796c.5907 0 1.2364-.4533 1.4424-1.0166l2.6652-7.3085c.4396-1.1952-.2473-2.1706-1.525-2.1706h-4.6983l-3.929 10.798-2.2255 6.127C3.929 22.434 0 17.6806 0 12.007 0 6.498 3.7092 1.8546 8.7647.4396L6.4705 6.759 2.6514 17.2547h2.5415L8.4488 8.339h1.9095l-3.2558 8.9158H9.644l3.0223-8.3251c.4396-1.1952-.2473-2.1706-1.525-2.1706h-2.143l2.459-6.7453C11.636 0 11.8145 0 11.9931 0 18.6285 0 24 5.3715 24 12.007c.0137 6.6216-5.3578 11.993-11.9931 11.993zM19.2742 8.325h-1.9096l-2.6789 7.336h1.9096l2.6789-7.336z"/></symbol>
 <symbol id="logo-dell" viewBox="0 0 24 24"><path d="M17.963 14.6V9.324h1.222v4.204h2.14v1.07h-3.362zm-9.784-3.288l2.98-2.292c.281.228.56.458.841.687l-2.827 2.14.611.535 2.827-2.216c.281.228.56.458.841.688a295.83 295.83 0 0 1-2.827 2.216l.61.536 2.83-2.295-.001-1.986h1.223v4.204h2.216v1.07h-3.362v-1.987c-.995.763-1.987 1.529-2.981 2.292l-2.981-2.292c-.144.729-.653 1.36-1.312 1.694-.285.147-.597.24-.915.276-.183.022-.367.017-.551.017H3.516V9.325H5.69a2.544 2.544 0 0 1 1.563.557c.454.36.778.872.927 1.43m-3.516-.917v3.21l.953-.001a1.377 1.377 0 0 0 1.036-.523 1.74 1.74 0 0 0 .182-1.889 1.494 1.494 0 0 0-.976-.766c-.166-.04-.338-.03-.507-.032h-.688zM11.82 0h.337a11.94 11.94 0 0 1 5.405 1.373 12.101 12.101 0 0 1 4.126 3.557A11.93 11.93 0 0 1 24 11.82v.36a11.963 11.963 0 0 1-3.236 8.033A11.967 11.967 0 0 1 12.182 24h-.361a11.993 11.993 0 0 1-4.145-.806 12.04 12.04 0 0 1-4.274-2.836A12.057 12.057 0 0 1 .576 15.67 12.006 12.006 0 0 1 0 12.181v-.361a11.924 11.924 0 0 1 1.992-6.396 12.211 12.211 0 0 1 4.71-4.172A11.875 11.875 0 0 1 11.82 0m-.153 1.23a10.724 10.724 0 0 0-6.43 2.375 10.78 10.78 0 0 0-3.319 4.573 10.858 10.858 0 0 0 .193 8.12 10.788 10.788 0 0 0 3.546 4.421 10.698 10.698 0 0 0 4.786 1.946c1.456.209 2.955.124 4.376-.26a10.756 10.756 0 0 0 5.075-3.062 10.742 10.742 0 0 0 2.686-5.28 10.915 10.915 0 0 0-.122-4.682 10.77 10.77 0 0 0-7.098-7.626 10.78 10.78 0 0 0-3.693-.525z"/></symbol>
@@ -508,7 +624,7 @@
   <div class="container">
     <div class="hero-inner">
       <div>
-        <span class="badge reveal"><b>15+ yrs</b> <span data-i18n="hero.badge">Trusted by institutions &amp; businesses in Kosovo</span></span>
+        <span class="badge reveal"><b data-i18n="hero.yrs">15+ yrs</b> <span data-i18n="hero.badge">Trusted by institutions &amp; businesses in Kosovo</span></span>
         <h1 class="reveal d1"><span data-i18n="hero.title">The trusted IT partner for</span>
           <span class="rot-wrap"><span class="rotator" id="rotator">institutions</span></span></h1>
         <p class="hero-lead reveal d2" data-i18n="hero.lead">First Solution L.L.C. is the strategic partner for high-end Hardware, Networking and System Integration in Kosovo and beyond, built on over 15 years of expertise. Delivered on time, to specification and with official manufacturer warranty.</p>
@@ -666,7 +782,7 @@
             </ul>
             <div class="foot">
               <div class="brands-row"><span class="logo"><svg><use href="#logo-hp"/></svg></span><span class="logo"><svg><use href="#logo-dell"/></svg></span><span class="logo"><svg class="w3"><use href="#logo-lenovo"/></svg></span></div>
-              <a href="#contact" class="btn btn-primary" data-topic="1"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
+              <a href="#contact" class="btn btn-primary" data-need="computers"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
         </article>
@@ -683,7 +799,7 @@
             </ul>
             <div class="foot">
               <div class="brands-row"><span class="logo"><svg class="w2"><use href="#logo-cisco"/></svg></span><span class="logo"><svg><use href="#logo-tplink"/></svg>TP-Link</span><span class="logo"><svg class="w3"><use href="#logo-omadacloud"/></svg></span></div>
-              <a href="#contact" class="btn btn-primary" data-topic="2"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
+              <a href="#contact" class="btn btn-primary" data-need="network"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
         </article>
@@ -700,7 +816,7 @@
             </ul>
             <div class="foot">
               <div class="brands-row"><span class="logo">APC</span></div>
-              <a href="#contact" class="btn btn-primary" data-topic="3"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
+              <a href="#contact" class="btn btn-primary" data-need="ups"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
         </article>
@@ -717,7 +833,7 @@
             </ul>
             <div class="foot">
               <div class="brands-row"><span class="logo"><span class="ms"><i></i><i></i><i></i><i></i></span>Microsoft</span><span class="logo">Check Point</span></div>
-              <a href="#contact" class="btn btn-primary" data-topic="4"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
+              <a href="#contact" class="btn btn-primary" data-need="security"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
         </article>
@@ -729,6 +845,45 @@
       <div><svg><use href="#check"/></svg><span data-i18n="sol.d2">Hardware Reselling</span></div>
       <div><svg><use href="#check"/></svg><span data-i18n="sol.d3">Networking</span></div>
       <div><svg><use href="#check"/></svg><span data-i18n="sol.d4">Installation &amp; Support</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TYPICAL PROJECTS ================= -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="proj.eyebrow">Typical projects</span>
+      <h2 data-i18n="proj.title">What we deliver, from the first desk to the server room</h2>
+      <p data-i18n="proj.lead">Examples of the projects we plan, supply and install for institutions and businesses across Kosovo.</p>
+    </div>
+    <div class="projects">
+      <a href="#contact" class="proj reveal" data-need="computers">
+        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div><span class="tag" data-i18n="proj.tag">Typical project</span>
+          <h3 data-i18n="proj.p1t">Office &amp; workstation rollout</h3>
+          <p data-i18n="proj.p1d">Laptops, desktops, monitors and printers delivered, configured and installed at every desk, ready on day one.</p>
+          <div class="chips"><span>HP · Dell · Lenovo</span><span data-i18n="proj.c1b">Setup &amp; configuration</span><span data-i18n="proj.c1c">Asset labelling</span></div></div>
+      </a>
+      <a href="#contact" class="proj reveal d1" data-need="servers">
+        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div><span class="tag" data-i18n="proj.tag">Typical project</span>
+          <h3 data-i18n="proj.p2t">Server room modernization</h3>
+          <p data-i18n="proj.p2d">Servers, storage, racks and APC power protection, sized for your workloads.</p></div>
+      </a>
+      <a href="#contact" class="proj reveal d2" data-need="network">
+        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div><span class="tag" data-i18n="proj.tag">Typical project</span>
+          <h3 data-i18n="proj.p3t">Building-wide Wi-Fi &amp; LAN</h3>
+          <p data-i18n="proj.p3d">Structured cabling, switching and centrally managed Wi-Fi across floors and buildings.</p></div>
+      </a>
+      <a href="#contact" class="proj reveal d1" data-need="security">
+        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div><span class="tag" data-i18n="proj.tag">Typical project</span>
+          <h3 data-i18n="proj.p4t">Security &amp; licensing</h3>
+          <p data-i18n="proj.p4d">Check Point firewalls and official Microsoft licensing, configured, documented and handed over.</p>
+          <div class="chips"><span>Check Point</span><span>Microsoft 365</span><span data-i18n="proj.c4c">Access policies</span></div></div>
+      </a>
     </div>
   </div>
 </section>
@@ -794,15 +949,15 @@
       <span class="eyebrow" data-i18n="ind.eyebrow">Who we serve</span>
       <h2 data-i18n="ind.title">Serving the institutions and businesses that keep Kosovo running</h2>
     </div>
-    <div class="industries reveal">
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span data-i18n="ind.i1">Ministries &amp; government agencies</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-5h6v5"/></svg><span data-i18n="ind.i2">Municipalities</span></span>
-      <span class="chip"><svg><use href="#i-power"/></svg><span data-i18n="ind.i3">Public enterprises</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg><span data-i18n="ind.i4">Education</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg><span data-i18n="ind.i5">Healthcare</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span data-i18n="ind.i6">Banking &amp; finance</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span data-i18n="ind.i7">International organizations &amp; NGOs</span></span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg><span data-i18n="ind.i8">Businesses &amp; system integrators</span></span>
+    <div class="serve">
+      <div class="tile reveal"><span class="ic"><svg><use href="#i-gov"/></svg></span><span data-i18n="ind.i1">Ministries &amp; government agencies</span></div>
+      <div class="tile reveal d1"><span class="ic"><svg><use href="#i-city"/></svg></span><span data-i18n="ind.i2">Municipalities</span></div>
+      <div class="tile reveal d2"><span class="ic"><svg><use href="#i-power"/></svg></span><span data-i18n="ind.i3">Public enterprises</span></div>
+      <div class="tile reveal d3"><span class="ic"><svg><use href="#i-edu"/></svg></span><span data-i18n="ind.i4">Education</span></div>
+      <div class="tile reveal"><span class="ic"><svg><use href="#i-health"/></svg></span><span data-i18n="ind.i5">Healthcare</span></div>
+      <div class="tile reveal d1"><span class="ic"><svg><use href="#i-bank"/></svg></span><span data-i18n="ind.i6">Banking &amp; finance</span></div>
+      <div class="tile reveal d2"><span class="ic"><svg><use href="#i-globe"/></svg></span><span data-i18n="ind.i7">International organizations &amp; NGOs</span></div>
+      <div class="tile reveal d3"><span class="ic"><svg><use href="#i-biz"/></svg></span><span data-i18n="ind.i8">Businesses &amp; system integrators</span></div>
     </div>
   </div>
 </section>
@@ -834,20 +989,46 @@
       <h2 data-i18n="vis.title">Always looking at what's next</h2>
       <p data-i18n="vis.lead">At First Solution L.L.C., we keep investing in how we serve our clients, today and tomorrow.</p>
     </div>
-    <div class="vision">
-      <article class="vcard reveal">
-        <span class="soon" data-i18n="vis.soon">Coming soon</span>
-        <div class="n">01</div>
-        <h3 data-i18n="vis.v1t">The E-commerce Platform</h3>
-        <p data-i18n="vis.v1d">We are developing a large online IT marketplace with a rich catalogue of hardware and software for businesses, institutions and system integrators.</p>
-      </article>
-      <article class="vcard reveal d1">
-        <span class="soon" data-i18n="vis.grow">Expanding</span>
-        <div class="n">02</div>
-        <h3 data-i18n="vis.v2t">Regional Presence</h3>
-        <p data-i18n="vis.v2d">Proudly rooted in Prishtina, we are expanding toward Albania and North Macedonia, bringing our over 15 years of expertise to the region.</p>
-        <div class="flags"><span data-i18n="vis.c1">Kosovo</span><span data-i18n="vis.c2">Albania</span><span data-i18n="vis.c3">North Macedonia</span></div>
-      </article>
+    <div class="vision2">
+      <div class="vstack">
+        <article class="vcard reveal">
+          <span class="soon" data-i18n="vis.soon">Coming soon</span>
+          <div class="n">01</div>
+          <h3 data-i18n="vis.v1t">The E-commerce Platform</h3>
+          <p data-i18n="vis.v1d">We are developing a large online IT marketplace with a rich catalogue of hardware and software for businesses, institutions and system integrators.</p>
+        </article>
+        <article class="vcard reveal d1">
+          <span class="soon" data-i18n="vis.grow">Expanding</span>
+          <div class="n">02</div>
+          <h3 data-i18n="vis.v2t">Regional Presence</h3>
+          <p data-i18n="vis.v2d">Proudly rooted in Prishtina, we are expanding toward Albania and North Macedonia, bringing our over 15 years of expertise to the region.</p>
+          <div class="flags"><span data-i18n="vis.c1">Kosovo</span><span data-i18n="vis.c2">Albania</span><span data-i18n="vis.c3">North Macedonia</span></div>
+        </article>
+      </div>
+      <div class="vmap reveal d2">
+        <svg class="rmap" viewBox="0 0 440 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <pattern id="dotgrid" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,.13)"/></pattern>
+            <radialGradient id="pinG"><stop offset="0" stop-color="#56ccf2"/><stop offset="1" stop-color="#2f80ed"/></radialGradient>
+          </defs>
+          <rect width="440" height="460" fill="url(#dotgrid)"/>
+          <path class="arc" d="M300 170 Q 200 210 140 360"/>
+          <path class="arc" d="M300 170 Q 360 210 335 270"/>
+          <circle class="pin-ring" cx="300" cy="170" r="16"/>
+          <circle cx="300" cy="170" r="16" fill="rgba(86,204,242,.15)"/>
+          <circle cx="300" cy="170" r="8" fill="url(#pinG)" stroke="#fff" stroke-width="2.5"/>
+          <text class="city" x="322" y="166" data-i18n="vis.m1">Prishtina</text>
+          <text class="city-sub" x="322" y="182" data-i18n="vis.hq">HEADQUARTERS</text>
+          <circle class="pin-ring" cx="140" cy="360" r="12" style="animation-delay:-1s"/>
+          <circle cx="140" cy="360" r="6.5" fill="#0f2038" stroke="#56ccf2" stroke-width="2.5"/>
+          <text class="city" x="158" y="365" data-i18n="vis.m2">Tirana</text>
+          <circle class="pin-ring" cx="335" cy="270" r="12" style="animation-delay:-1.8s"/>
+          <circle cx="335" cy="270" r="6.5" fill="#0f2038" stroke="#56ccf2" stroke-width="2.5"/>
+          <text class="city" x="353" y="275" data-i18n="vis.m3">Skopje</text>
+        </svg>
+        <div class="vm-head"><span data-i18n="vis.mapEyebrow">Regional growth</span><strong data-i18n="vis.mapTitle">From Prishtina to the region</strong></div>
+        <div class="legend"><span><i style="background:var(--brand-grad)"></i><span data-i18n="vis.l1">Headquarters</span></span><span><i style="border:2px solid var(--cyan-400)"></i><span data-i18n="vis.l2">Expansion markets</span></span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -895,29 +1076,63 @@
         </div>
       </div>
 
-      <form class="card reveal d1" id="contactForm" novalidate>
-        <h3 data-i18n="form.title">Request an offer</h3>
-        <p data-i18n="form.lead">Share a few details and we'll prepare the right solution for your institution or business.</p>
-        <div class="field">
-          <label data-i18n="form.topic">I'm interested in</label>
-          <div class="seg" id="topicSeg">
-            <label><input type="radio" name="topic" value="Public tender / procurement" checked><span data-i18n="form.tender">Public tender</span></label>
-            <label><input type="radio" name="topic" value="Enterprise Computing"><span data-i18n="sol.s1t">Enterprise Computing</span></label>
-            <label><input type="radio" name="topic" value="Networking"><span data-i18n="sol.d3">Networking</span></label>
-            <label><input type="radio" name="topic" value="Business Continuity"><span data-i18n="sol.s3t">Business Continuity</span></label>
-            <label><input type="radio" name="topic" value="Software & Security"><span data-i18n="sol.s4t">Software &amp; Security</span></label>
+      <form class="card wizard reveal d1" id="wizard" novalidate>
+        <div class="wiz-head"><h3 data-i18n="form.title">Request an offer</h3><span class="wiz-count" id="wizCount">Step 1 of 3</span></div>
+        <div class="wiz-bar"><i id="wizBar"></i></div>
+
+        <fieldset class="wstep active">
+          <legend data-i18n="wiz.q1">Who are you?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="org" value="Ministry / agency"><span><svg><use href="#i-gov"/></svg><b data-i18n="wiz.o1">Ministry / agency</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Municipality"><span><svg><use href="#i-city"/></svg><b data-i18n="wiz.o2">Municipality</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Education"><span><svg><use href="#i-edu"/></svg><b data-i18n="wiz.o3">Education</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Healthcare"><span><svg><use href="#i-health"/></svg><b data-i18n="wiz.o4">Healthcare</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Public enterprise"><span><svg><use href="#i-power"/></svg><b data-i18n="wiz.o5">Public enterprise</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Business"><span><svg><use href="#i-biz"/></svg><b data-i18n="wiz.o6">Business</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="International organization / NGO"><span><svg><use href="#i-globe"/></svg><b data-i18n="wiz.o7">International org / NGO</b></span></label>
+            <label class="opt"><input type="radio" name="org" value="Other"><span><svg><use href="#i-dots"/></svg><b data-i18n="wiz.o8">Other</b></span></label>
           </div>
+        </fieldset>
+
+        <fieldset class="wstep">
+          <legend data-i18n="wiz.q2">What do you need?</legend>
+          <p class="hint" data-i18n="wiz.q2s">Select all that apply.</p>
+          <div class="seg multi">
+            <label><input type="checkbox" name="needs" value="Computers & laptops" data-key="computers"><span data-i18n="wiz.n1">Computers &amp; laptops</span></label>
+            <label><input type="checkbox" name="needs" value="Servers & storage" data-key="servers"><span data-i18n="wiz.n2">Servers &amp; storage</span></label>
+            <label><input type="checkbox" name="needs" value="Networking & Wi-Fi" data-key="network"><span data-i18n="wiz.n3">Networking &amp; Wi-Fi</span></label>
+            <label><input type="checkbox" name="needs" value="UPS & power protection" data-key="ups"><span data-i18n="wiz.n4">UPS &amp; power</span></label>
+            <label><input type="checkbox" name="needs" value="Microsoft licensing" data-key="licensing"><span data-i18n="wiz.n5">Microsoft licensing</span></label>
+            <label><input type="checkbox" name="needs" value="Firewall & security" data-key="security"><span data-i18n="wiz.n6">Firewall &amp; security</span></label>
+            <label><input type="checkbox" name="needs" value="Installation & support" data-key="support"><span data-i18n="wiz.n7">Installation &amp; support</span></label>
+            <label><input type="checkbox" name="needs" value="Public tender offer" data-key="tender"><span data-i18n="wiz.n8">Public tender offer</span></label>
+          </div>
+          <div class="field"><label data-i18n="wiz.size">Approximate number of users or devices</label>
+            <div class="seg"><label><input type="radio" name="size" value="1-10" checked><span>1–10</span></label><label><input type="radio" name="size" value="10-50"><span>10–50</span></label><label><input type="radio" name="size" value="50-200"><span>50–200</span></label><label><input type="radio" name="size" value="200+"><span>200+</span></label></div></div>
+          <div class="field"><label data-i18n="wiz.time">Timeline</label>
+            <div class="seg"><label><input type="radio" name="timeline" value="As soon as possible" checked><span data-i18n="wiz.t1">As soon as possible</span></label><label><input type="radio" name="timeline" value="1-3 months"><span data-i18n="wiz.t2">1–3 months</span></label><label><input type="radio" name="timeline" value="Planning ahead"><span data-i18n="wiz.t3">Planning ahead</span></label><label><input type="radio" name="timeline" value="Tender deadline"><span data-i18n="wiz.t4">Tender deadline</span></label></div></div>
+        </fieldset>
+
+        <fieldset class="wstep">
+          <legend data-i18n="wiz.q3">How can we reach you?</legend>
+          <div class="row">
+            <div class="field"><label for="f-name" data-i18n="form.name">Full name</label><input id="f-name" name="fullname" required autocomplete="name"></div>
+            <div class="field"><label for="f-company" data-i18n="form.company">Institution / company</label><input id="f-company" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="f-email" data-i18n="form.email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="f-phone" data-i18n="form.phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="f-msg" data-i18n="form.msg">Message</label><textarea id="f-msg" name="message" data-i18n-ph="wiz.msgph" placeholder="Quantities, specifications or tender reference (optional)"></textarea></div>
+          <div class="summary" id="wizSum"></div>
+        </fieldset>
+
+        <p class="wiz-err" id="wizErr" role="alert"></p>
+        <div class="wiz-nav">
+          <button type="button" class="btn btn-light" id="wizBack" hidden data-i18n="wiz.back">Back</button>
+          <button type="button" class="btn btn-primary" id="wizNext"><span data-i18n="wiz.next">Continue</span><svg><use href="#arrow"/></svg></button>
+          <button type="submit" class="btn btn-primary" id="wizSend" hidden><span data-i18n="form.send">Send request</span><svg><use href="#arrow"/></svg></button>
         </div>
-        <div class="row">
-          <div class="field"><label for="f-name" data-i18n="form.name">Full name</label><input id="f-name" name="name" required autocomplete="name"></div>
-          <div class="field"><label for="f-company" data-i18n="form.company">Institution / company</label><input id="f-company" name="company" autocomplete="organization"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label for="f-email" data-i18n="form.email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="f-phone" data-i18n="form.phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-        </div>
-        <div class="field"><label for="f-msg" data-i18n="form.msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
-        <button type="submit" class="btn btn-primary"><span data-i18n="form.send">Send request</span><svg><use href="#arrow"/></svg></button>
         <div class="form-ok" id="formOk" role="status" data-i18n="form.ok">Thank you! Your email app has opened with your request. Just press send.</div>
         <p class="form-note" data-i18n="form.note">We respect your privacy and never share your data.</p>
       </form>
@@ -963,10 +1178,30 @@
 <script>
   /* ---------- Albanian translations ---------- */
   const SQ = {
+    "proj.eyebrow": "Projekte tipike", "proj.title": "Çfarë dorëzojmë, nga tavolina e parë te dhoma e serverëve",
+    "proj.lead": "Shembuj të projekteve që planifikojmë, furnizojmë dhe instalojmë për institucione dhe biznese në mbarë Kosovën.",
+    "proj.tag": "Projekt tipik",
+    "proj.p1t": "Pajisje për zyra dhe stacione pune", "proj.p1d": "Laptopë, desktopë, monitorë dhe printerë të dorëzuar, të konfiguruar dhe të instaluar në çdo tavolinë, gati që në ditën e parë.",
+    "proj.c1b": "Konfigurim dhe instalim", "proj.c1c": "Etiketim i inventarit",
+    "proj.p2t": "Modernizim i dhomës së serverëve", "proj.p2d": "Serverë, ruajtje, rack dhe mbrojtje energjie APC, të dimensionuara për nevojat tuaja.",
+    "proj.p3t": "Wi-Fi dhe LAN në të gjithë ndërtesën", "proj.p3d": "Kabllim i strukturuar, switching dhe Wi-Fi me menaxhim qendror nëpër kate dhe ndërtesa.",
+    "proj.p4t": "Siguri dhe licencim", "proj.p4d": "Firewall Check Point dhe licencim zyrtar Microsoft, të konfiguruara, të dokumentuara dhe të dorëzuara.",
+    "proj.c4c": "Politika qasjeje",
+    "vis.m1": "Prishtinë", "vis.hq": "SELIA", "vis.m2": "Tiranë", "vis.m3": "Shkup",
+    "vis.mapEyebrow": "Rritje rajonale", "vis.mapTitle": "Nga Prishtina drejt rajonit", "vis.l1": "Selia", "vis.l2": "Tregjet e zgjerimit",
+    "wiz.q1": "Kush jeni ju?", "wiz.o1": "Ministri / agjenci", "wiz.o2": "Komunë", "wiz.o3": "Arsim", "wiz.o4": "Shëndetësi",
+    "wiz.o5": "Ndërmarrje publike", "wiz.o6": "Biznes", "wiz.o7": "Organizatë ndërkombëtare / OJQ", "wiz.o8": "Tjetër",
+    "wiz.q2": "Çfarë ju nevojitet?", "wiz.q2s": "Zgjidhni të gjitha që vlejnë.",
+    "wiz.n1": "Kompjuterë dhe laptopë", "wiz.n2": "Serverë dhe ruajtje", "wiz.n3": "Rrjete dhe Wi-Fi", "wiz.n4": "UPS dhe energji",
+    "wiz.n5": "Licencim Microsoft", "wiz.n6": "Firewall dhe siguri", "wiz.n7": "Instalim dhe mbështetje", "wiz.n8": "Ofertë për tender publik",
+    "wiz.size": "Numri i përafërt i përdoruesve ose pajisjeve", "wiz.time": "Afati",
+    "wiz.t1": "Sa më shpejt", "wiz.t2": "1–3 muaj", "wiz.t3": "Planifikim i hershëm", "wiz.t4": "Afat tenderi",
+    "wiz.q3": "Si mund t'ju kontaktojmë?", "wiz.back": "Kthehu", "wiz.next": "Vazhdo",
+    "wiz.msgph": "Sasi, specifika ose referencë tenderi (opsionale)",
     "nav.home": "Ballina", "nav.inst": "Institucionet", "nav.solutions": "Zgjidhjet & Partnerët", "nav.about": "Rreth Nesh",
     "nav.vision": "Vizioni", "nav.contact": "Kontakti", "nav.quote": "Kërko ofertë",
     "hero.badge": "I besuar nga institucionet dhe bizneset në Kosovë",
-    "hero.title": "Partneri i besuar IT për",
+    "hero.yrs": "15+ vjet", "hero.title": "Partneri i besuar IT për",
     "hero.lead": "First Solution L.L.C. është partneri strategjik për pajisje të nivelit të lartë, rrjete dhe integrim sistemesh në Kosovë dhe më gjerë, i ndërtuar mbi më shumë se 15 vjet ekspertizë. Në kohë, sipas specifikave dhe me garanci zyrtare nga prodhuesi.",
     "hero.cta1": "Kërko ofertë", "hero.cta2": "Eksploroni zgjidhjet tona",
     "hero.p1": "Përvojë në tenderë publikë", "hero.p2": "Pajisje origjinale me garanci", "hero.p3": "Mbështetje lokale në Prishtinë",
@@ -1050,7 +1285,7 @@
     en: ["institutions", "ministries", "municipalities", "hospitals", "schools", "businesses"],
     sq: ["institucionet", "ministritë", "komunat", "spitalet", "shkollat", "bizneset"]
   };
-  let lang = "en";
+  let lang = "en", wizReady = false;
   const EN = {};
   document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (!(k in EN)) EN[k] = el.innerHTML; });
   function setLang(l) {
@@ -1060,6 +1295,8 @@
     document.documentElement.lang = l;
     document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === l));
     wordIndex = 0; rotator.textContent = WORDS[l][0];
+    document.querySelectorAll("[data-i18n-ph]").forEach(el => { if (!el.dataset.phEn) el.dataset.phEn = el.placeholder; el.placeholder = l === "sq" ? SQ[el.dataset.i18nPh] : el.dataset.phEn; });
+    if (wizReady) wizRender();
     try { localStorage.setItem("fs-lang", l); } catch (e) {}
   }
 
@@ -1079,14 +1316,16 @@
   }, 2600);
 
   document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-  try { if (localStorage.getItem("fs-lang") === "sq") setLang("sq"); } catch (e) {}
+  /* Saved choice first, otherwise follow the browser language */
+  let savedLang = null;
+  try { savedLang = localStorage.getItem("fs-lang"); } catch (e) {}
+  const startLang = savedLang || ((navigator.language || "").toLowerCase().startsWith("sq") ? "sq" : "en");
+  if (startLang === "sq") setLang("sq");
 
   /* ---------- Logo marquee: duplicate for a seamless loop ---------- */
   const track = document.getElementById("marquee");
   [...track.children].forEach(c => { const copy = c.cloneNode(true); copy.setAttribute("aria-hidden", "true"); track.appendChild(copy); });
 
-  /* ---------- Hero tracker bars ---------- */
-  setTimeout(() => document.querySelectorAll("#dash .bar i").forEach(b => b.style.width = b.dataset.w + "%"), 500);
 
   /* ---------- Solutions tabs (auto-advance, pause on hover) ---------- */
   const sol = document.getElementById("sol");
@@ -1106,10 +1345,20 @@
   sol.addEventListener("mouseleave", () => { sol.classList.remove("paused"); restart(); });
   restart();
 
-  /* Solution "Request an offer" buttons preselect the topic in the form */
-  document.querySelectorAll("[data-topic]").forEach(a => a.addEventListener("click", () => {
-    const radios = document.querySelectorAll('#topicSeg input'); radios[+a.dataset.topic].checked = true;
+  /* "Request an offer" links on solutions and projects preselect what the visitor needs */
+  document.querySelectorAll("[data-need]").forEach(a => a.addEventListener("click", () => {
+    const box = document.querySelector(`#wizard input[data-key="${a.dataset.need}"]`); if (box) box.checked = true;
   }));
+
+  /* ---------- Hero tracker tilts with the mouse ---------- */
+  const dashEl = document.getElementById("dash"), heroEl = document.getElementById("home");
+  if (!reduced && window.matchMedia("(hover: hover)").matches) {
+    heroEl.addEventListener("mousemove", e => {
+      const r = heroEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      dashEl.style.transform = `perspective(1100px) rotateY(${x * 9}deg) rotateX(${-y * 9}deg)`;
+    });
+    heroEl.addEventListener("mouseleave", () => { dashEl.style.transform = ""; });
+  }
 
   /* ---------- Pillar spotlight follows the cursor ---------- */
   document.querySelectorAll(".pillar").forEach(p => p.addEventListener("mousemove", e => {
@@ -1147,24 +1396,90 @@
     e.target.querySelectorAll("[data-count]").forEach(countUp);
     reveal.unobserve(e.target);
   }), { threshold: 0.12 });
-  document.querySelectorAll(".reveal, #processRow").forEach(el => reveal.observe(el));
+  /* ---------- Loader, then start the reveal animations ---------- */
+  const loader = document.getElementById("loader"), t0 = performance.now();
+  let started = false;
+  function start() {
+    if (started) return; started = true;
+    setTimeout(() => {
+      loader.classList.add("done");
+      document.querySelectorAll(".reveal, #processRow").forEach(el => reveal.observe(el));
+      setTimeout(() => document.querySelectorAll("#dash .bar i").forEach(b => b.style.width = b.dataset.w + "%"), 400);
+    }, reduced ? 0 : Math.max(0, 1000 - (performance.now() - t0)));
+  }
+  if (document.readyState === "complete") start(); else window.addEventListener("load", start);
+  setTimeout(start, 1600);
   function countUp(el) {
     const target = +el.dataset.count, dur = 1500, start = performance.now();
     const tick = now => { const p = Math.min((now - start) / dur, 1); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   }
 
-  /* ---------- Contact form (opens the visitor's email app) ---------- */
-  document.getElementById("contactForm").addEventListener("submit", e => {
+  /* ---------- Offer wizard (opens the visitor's email app) ---------- */
+  const MSG = {
+    en: { count: n => `Step ${n} of 3`, e1: "Please choose one option.", e2: "Please select at least one item.", e3: "Please enter your name and a valid email address.",
+          who: "Organization", needs: "Needs", size: "Size", time: "Timeline" },
+    sq: { count: n => `Hapi ${n} nga 3`, e1: "Ju lutem zgjidhni një opsion.", e2: "Ju lutem zgjidhni të paktën një.", e3: "Ju lutem shkruani emrin dhe një email të vlefshëm.",
+          who: "Organizata", needs: "Nevojat", size: "Madhësia", time: "Afati" }
+  };
+  const wiz = document.getElementById("wizard"), steps = [...wiz.querySelectorAll("fieldset.wstep")];
+  const wizBack = document.getElementById("wizBack"), wizNext = document.getElementById("wizNext"), wizSend = document.getElementById("wizSend");
+  const wizErr = document.getElementById("wizErr"), wizSum = document.getElementById("wizSum");
+  let step = 0;
+  const labelOf = input => input.nextElementSibling.textContent.trim();
+  const checked = name => [...wiz.querySelectorAll(`input[name="${name}"]:checked`)];
+  function wizRender() {
+    steps.forEach((s, i) => s.classList.toggle("active", i === step));
+    document.getElementById("wizBar").style.width = ((step + 1) / steps.length * 100) + "%";
+    document.getElementById("wizCount").textContent = MSG[lang].count(step + 1);
+    wizBack.hidden = step === 0; wizNext.hidden = step === steps.length - 1; wizSend.hidden = step !== steps.length - 1;
+    wizErr.textContent = "";
+    if (step === steps.length - 1) {
+      const m = MSG[lang];
+      wizSum.innerHTML = `<span><b>${m.who}:</b> ${checked("org").map(labelOf).join("")}</span><span><b>${m.needs}:</b> ${checked("needs").map(labelOf).join(", ")}</span><span><b>${m.size}:</b> ${checked("size").map(labelOf).join("")} · <b>${m.time}:</b> ${checked("timeline").map(labelOf).join("")}</span>`;
+    }
+  }
+  function wizError() {
+    if (step === 0 && !checked("org").length) return MSG[lang].e1;
+    if (step === 1 && !checked("needs").length) return MSG[lang].e2;
+    if (step === 2) {
+      const name = document.getElementById("f-name"), email = document.getElementById("f-email");
+      if (!name.value.trim() || !email.checkValidity() || !email.value.trim()) return MSG[lang].e3;
+    }
+    return "";
+  }
+  function go(delta) {
+    if (delta > 0) { const e = wizError(); if (e) { wizErr.textContent = e; return; } }
+    step = Math.min(Math.max(step + delta, 0), steps.length - 1);
+    wizRender();
+    if (wiz.getBoundingClientRect().top < 0) wiz.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  wizNext.addEventListener("click", () => go(1));
+  wizBack.addEventListener("click", () => go(-1));
+  wiz.querySelectorAll('input[name="org"]').forEach(r => r.addEventListener("change", () => setTimeout(() => { if (step === 0) go(1); }, 280)));
+  wiz.addEventListener("submit", e => {
     e.preventDefault();
-    const f = e.target;
-    if (!f.reportValidity()) return;
-    const d = Object.fromEntries(new FormData(f));
-    const subject = `Offer request: ${d.topic}${d.company ? " — " + d.company : ""}`;
-    const body = `Name: ${d.name}\nInstitution / company: ${d.company || "-"}\nEmail: ${d.email}\nPhone: ${d.phone || "-"}\nInterested in: ${d.topic}\n\n${d.message}`;
+    const err = wizError(); if (err) { wizErr.textContent = err; return; }
+    const v = name => checked(name).map(i => i.value).join(", ");
+    const company = document.getElementById("f-company").value.trim();
+    const subject = `Offer request: ${v("org")}${company ? " — " + company : ""}`;
+    const body = [
+      `Name: ${document.getElementById("f-name").value.trim()}`,
+      `Institution / company: ${company || "-"}`,
+      `Email: ${document.getElementById("f-email").value.trim()}`,
+      `Phone: ${document.getElementById("f-phone").value.trim() || "-"}`,
+      `Organization type: ${v("org")}`,
+      `Needs: ${v("needs")}`,
+      `Users / devices: ${v("size")}`,
+      `Timeline: ${v("timeline")}`,
+      "", document.getElementById("f-msg").value.trim()
+    ].join("\n");
+    wizErr.textContent = "";
     window.location.href = `mailto:info@firstsolution-ks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     document.getElementById("formOk").classList.add("show");
   });
+  wizReady = true;
+  wizRender();
 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
