@@ -1,0 +1,10 @@
+{
+  "name": "First Solution L.L.C.",
+  "short_name": "First Solution",
+  "description": "The trusted IT partner for institutions in Kosovo.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

@@ -11,9 +11,13 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=70">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="alternate" hreflang="en" href="https://ariongj.github.io/firstsolution-ks/">
+  <link rel="alternate" hreflang="sq" href="https://ariongj.github.io/firstsolution-ks/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=70">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
@@ -47,6 +51,7 @@
       --brand-rgb: 47,128,237;
       --accent-rgb: 86,204,242;
       --brand-grad: linear-gradient(90deg, #2f80ed, #56ccf2);
+      --blue-text: #1c66d1;     /* brand blue, darkened for small text (WCAG AA) */
       /* ================================================================== */
       --ink: #0f1b2d;
       --ink-soft: #55657d;
@@ -71,7 +76,7 @@
     .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
     .section { padding: 120px 0; position: relative; }
     .section-soft { background: var(--bg-soft); }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-500); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-text); }
     .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--brand-grad); border-radius: 2px; }
     .section-head { max-width: 720px; margin-bottom: 60px; }
     .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
@@ -111,7 +116,7 @@
     .header.scrolled { background: rgba(8, 18, 34, .88); backdrop-filter: saturate(170%) blur(16px); -webkit-backdrop-filter: saturate(170%) blur(16px); box-shadow: 0 1px 0 rgba(255,255,255,.07); padding: 11px 0; }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { color: #d0dbee; font-weight: 600; font-size: 14.5px; padding: 10px 13px; border-radius: 999px; transition: color .2s, background .2s; }
+    .nav-links a { white-space: nowrap; color: #d0dbee; font-weight: 600; font-size: 14.5px; padding: 10px 13px; border-radius: 999px; transition: color .2s, background .2s; }
     .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,.09); }
     .nav-actions { display: flex; align-items: center; gap: 12px; }
     .lang { display: inline-flex; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 999px; padding: 3px; }
@@ -199,7 +204,7 @@
 
     /* ---------- Institutions ---------- */
     .inst { display: grid; grid-template-columns: .95fr 1.05fr; gap: 72px; align-items: center; margin-bottom: 72px; }
-    .inst-photo { position: relative; border-radius: 28px; aspect-ratio: 4 / 4.6; box-shadow: var(--shadow-lg); }
+    .inst-photo { position: relative; border-radius: 28px; background-color: var(--navy-900); aspect-ratio: 4 / 4.6; box-shadow: var(--shadow-lg); }
     .inst-photo .ph { position: absolute; inset: 0; border-radius: 28px; }
     .inst-photo .ph::after { content: ""; position: absolute; inset: 0; border-radius: 28px; background: linear-gradient(180deg, transparent 40%, rgba(6,13,27,.75)); }
     .inst-photo .cap { position: absolute; left: 26px; right: 26px; bottom: 26px; color: #fff; z-index: 1; }
@@ -267,7 +272,7 @@
     .collage { position: relative; aspect-ratio: 1 / 1.02; }
     .collage .a, .collage .b { position: absolute; border-radius: 26px; box-shadow: var(--shadow-lg); }
     .collage .a { inset: 0 22% 18% 0; }
-    .collage .b { inset: 40% 0 0 34%; border: 8px solid var(--bg-soft); }
+    .collage .b { inset: 40% 0 0 34%; border: 8px solid #fff; }
     .collage .tag { position: absolute; left: 6%; bottom: 4%; background: #fff; border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 14px; z-index: 1; }
     .collage .tag strong { font-size: 34px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; }
     .collage .tag span { font-size: 13.5px; font-weight: 700; color: var(--ink-soft); line-height: 1.3; }
@@ -317,11 +322,11 @@
     .vcard h3 { font-size: 24px; margin-bottom: 10px; }
     .vcard p { color: var(--ink-soft); font-size: 16.5px; }
     .vcard .flags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-    .vcard .flags span { font-size: 13px; font-weight: 800; padding: 6px 13px; border-radius: 999px; background: rgba(var(--brand-rgb),.1); color: var(--blue-500); }
+    .vcard .flags span { font-size: 13px; font-weight: 800; padding: 6px 13px; border-radius: 999px; background: rgba(var(--brand-rgb),.1); color: var(--blue-text); }
     .vcard .soon { position: absolute; top: 28px; right: 28px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: var(--navy-900); color: var(--cyan-400); }
 
     /* ---------- CTA ---------- */
-    .cta { position: relative; overflow: hidden; border-radius: 32px; color: #fff; padding: 84px 40px; text-align: center; }
+    .cta { position: relative; overflow: hidden; border-radius: 32px; color: #fff; background-color: var(--navy-900); padding: 84px 40px; text-align: center; }
     .cta .ph { position: absolute; inset: 0; }
     .cta .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(10,22,40,.95), rgba(22,48,79,.85) 50%, rgba(var(--brand-rgb),.75)); }
     .cta > *:not(.ph) { position: relative; }
@@ -389,7 +394,7 @@
     }
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 1180px) {
+    @media (max-width: 1280px) {
       .nav-links { display: none; }
       .menu-toggle { display: inline-flex; }
       .nav-links.open { display: flex; flex-direction: column; align-items: stretch; position: absolute; top: 100%; left: 16px; right: 16px; background: var(--navy-900); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 10px; box-shadow: var(--shadow-lg); }
@@ -553,6 +558,117 @@
       .opt span { padding: 12px 10px; gap: 8px; font-size: 13px; }
       .opt span svg { width: 18px; height: 18px; }
     }
+
+    /* ---------- Catalogue ---------- */
+    .cat-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 28px; flex-wrap: wrap; }
+    .cat-top .section-head { margin-bottom: 0; }
+    .search { position: relative; width: 340px; max-width: 100%; }
+    .search input { width: 100%; padding: 15px 18px 15px 48px; border-radius: 999px; border: 1px solid #d5ddeb; font: inherit; font-size: 15px; background: #fff; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+    .search input:focus { outline: none; border-color: var(--blue-500); box-shadow: 0 0 0 4px rgba(var(--brand-rgb),.14); }
+    .search svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--ink-soft); pointer-events: none; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+    .filters button { border: 1px solid #d5ddeb; background: #fff; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; color: #34445f; cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+    .filters button:hover { border-color: var(--blue-400); }
+    .filters button.on { background: var(--navy-900); border-color: var(--navy-900); color: #fff; }
+    .filters button .ct { opacity: .55; margin-left: 6px; font-weight: 600; }
+    .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s, border-color .3s; animation: pIn .5s var(--ease) both; }
+    @keyframes pIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .product:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(var(--brand-rgb),.3); }
+    .product .vis { position: relative; height: 172px; display: grid; place-items: center; background: radial-gradient(240px 140px at 50% 62%, rgba(var(--brand-rgb),.13), transparent 70%), linear-gradient(180deg, #f7f9fd, #ecf1f8); }
+    .product .vis svg.ill { width: 168px; height: 116px; transition: transform .6s var(--ease); }
+    .product:hover .vis svg.ill { transform: scale(1.07) translateY(-3px); }
+    .brandmark { position: absolute; left: 14px; top: 14px; display: flex; align-items: center; gap: 6px; color: #22314d; font-weight: 800; font-size: 13px; letter-spacing: -0.01em; }
+    .brandmark svg { width: 24px; height: 24px; fill: currentColor; }
+    .brandmark svg.w2 { width: 40px; height: 22px; }
+    .brandmark svg.w3 { width: 64px; height: 21px; }
+    .brandmark .ms { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; width: 16px; height: 16px; }
+    .brandmark .ms i:nth-child(1) { background: #f25022; } .brandmark .ms i:nth-child(2) { background: #7fba00; }
+    .brandmark .ms i:nth-child(3) { background: #00a4ef; } .brandmark .ms i:nth-child(4) { background: #ffb900; }
+    .catchip { position: absolute; right: 12px; top: 12px; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-text); background: #fff; border: 1px solid var(--line); padding: 5px 9px; border-radius: 999px; }
+    .product .body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .product h3 { font-size: 17px; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .product ul { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 6px; flex: 1; align-content: start; }
+    .product li { font-size: 13.5px; color: var(--ink-soft); display: flex; gap: 9px; line-height: 1.45; }
+    .product li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-500); margin-top: 8px; flex-shrink: 0; }
+    .pfoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .price { font-size: 12.5px; font-weight: 700; color: var(--ink-soft); }
+    .add { display: inline-flex; align-items: center; gap: 6px; border: 0; cursor: pointer; padding: 9px 14px; border-radius: 999px; font-weight: 800; font-size: 13px; background: var(--navy-900); color: #fff; transition: background .2s, color .2s, transform .2s; white-space: nowrap; }
+    .add:hover { transform: translateY(-1px); background: var(--blue-500); }
+    .add svg { width: 15px; height: 15px; }
+    .add.added { background: #e6f7ee; color: #17643c; }
+    .add.added:hover { background: #d6f2e3; }
+    .cat-more { display: flex; justify-content: center; margin-top: 34px; }
+    .cat-note { text-align: center; margin-top: 18px; color: var(--ink-soft); font-size: 14.5px; }
+    .cat-note a { color: var(--blue-text); font-weight: 700; }
+    .empty { grid-column: 1 / -1; text-align: center; padding: 48px 20px; color: var(--ink-soft); border: 1px dashed #c8d3e4; border-radius: 20px; }
+
+    /* ---------- Quote list button, drawer, toast ---------- */
+    .qbtn { position: relative; display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.08); color: #fff; font-weight: 700; font-size: 14px; cursor: pointer; transition: background .2s; }
+    .qbtn:hover { background: rgba(255,255,255,.15); }
+    .qbtn svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .qbtn .n { flex-shrink: 0; }
+    .qbtn .n { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--brand-grad); font-size: 12px; font-weight: 800; display: grid; place-items: center; }
+    .qbtn .n.zero { background: rgba(255,255,255,.18); }
+    .qbtn.bump { animation: bump .5s var(--ease); }
+    @keyframes bump { 40% { transform: scale(1.14); } }
+    .drawer-bg { position: fixed; inset: 0; background: rgba(6,13,27,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); z-index: 80; opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); background: #fff; z-index: 81; transform: translateX(105%); transition: transform .5s var(--ease); display: flex; flex-direction: column; box-shadow: -30px 0 60px -20px rgba(6,13,27,.45); visibility: hidden; }
+    body.drawer-open { overflow: hidden; }
+    body.drawer-open .drawer { transform: none; visibility: visible; }
+    body.drawer-open .drawer-bg { opacity: 1; visibility: visible; }
+    .dh { display: flex; justify-content: space-between; align-items: center; padding: 24px 26px; border-bottom: 1px solid var(--line); }
+    .dh h3 { font-size: 21px; }
+    .dh span { display: block; color: var(--ink-soft); font-size: 13.5px; font-weight: 600; margin-top: 2px; }
+    .dclose { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: #fff; cursor: pointer; display: grid; place-items: center; color: var(--ink); }
+    .dclose svg { width: 18px; height: 18px; }
+    .dlist { flex: 1; overflow: auto; padding: 6px 26px; }
+    .ditem { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .ditem .mini { width: 64px; height: 52px; border-radius: 12px; background: linear-gradient(180deg, #f7f9fd, #ecf1f8); display: grid; place-items: center; }
+    .ditem .mini svg { width: 56px; height: 38px; }
+    .ditem b { display: block; font-size: 14.5px; line-height: 1.3; }
+    .ditem small { color: var(--ink-soft); font-size: 12.5px; }
+    .ditem .rm { display: block; border: 0; background: none; color: var(--ink-soft); font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; margin-top: 4px; padding: 0; text-decoration: underline; }
+    .qty { display: inline-flex; align-items: center; border: 1px solid #d5ddeb; border-radius: 999px; overflow: hidden; }
+    .qty button { width: 32px; height: 32px; border: 0; background: #fff; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--ink); }
+    .qty button:hover { background: var(--bg-soft); }
+    .qty span { min-width: 26px; text-align: center; font-weight: 800; font-size: 14px; }
+    .dempty { text-align: center; padding: 64px 12px; color: var(--ink-soft); }
+    .dempty svg { width: 48px; height: 48px; margin: 0 auto 16px; color: #b9c7dc; }
+    .dempty .btn { margin-top: 20px; }
+    .df { padding: 18px 26px 24px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+    .df .btn { width: 100%; }
+    .df .clear { background: none; border: 0; color: var(--ink-soft); font: inherit; font-weight: 700; cursor: pointer; font-size: 14px; }
+    .df p { font-size: 13px; color: var(--ink-soft); text-align: center; }
+    .toast { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 30px); background: var(--navy-900); color: #fff; padding: 12px 14px 12px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: opacity .35s var(--ease), transform .35s var(--ease), visibility .35s; z-index: 90; display: flex; gap: 12px; align-items: center; white-space: nowrap; }
+    .toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    .toast svg { width: 18px; height: 18px; color: #3ee08f; }
+    .toast button { background: rgba(255,255,255,.1); border: 0; color: var(--cyan-400); font: inherit; font-weight: 800; cursor: pointer; padding: 6px 12px; border-radius: 999px; }
+    .profile-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+    .profile-cta small { color: var(--ink-soft); font-weight: 600; font-size: 13.5px; }
+
+    @media (max-width: 1180px) { .products { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 1024px) { .products { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 720px) {
+      .qbtn { padding: 0 12px; }
+      .search { width: 100%; }
+      .filters { flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px 24px; padding: 0 16px 4px; scrollbar-width: none; }
+      .filters::-webkit-scrollbar { display: none; }
+      .filters button { flex-shrink: 0; }
+      .products { grid-template-columns: 1fr; gap: 14px; }
+      .product { flex-direction: row; }
+      .product .vis { width: 128px; height: auto; flex-shrink: 0; }
+      .product .vis svg.ill { width: 112px; height: 78px; }
+      .brandmark { left: 10px; top: 10px; }
+      .catchip { display: none; }
+      .product .body { padding: 14px 16px 16px; }
+      .product h3 { font-size: 15.5px; margin-bottom: 6px; }
+      .product ul { margin-bottom: 12px; }
+      .product li:nth-child(3) { display: none; }
+      .pfoot { padding-top: 10px; }
+      .price { display: none; }
+      .pfoot { justify-content: flex-end; }
+    }
   </style>
 </head>
 <body>
@@ -562,6 +678,22 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <linearGradient id="ilBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f80ed"/><stop offset="1" stop-color="#56ccf2"/></linearGradient>
+    <linearGradient id="ilNavy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3d6b"/><stop offset="1" stop-color="#0c1b31"/></linearGradient>
+    <linearGradient id="ilMetal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3fa"/><stop offset="1" stop-color="#b9c7dc"/></linearGradient>
+    <symbol id="ill-laptop" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="32" y="12" width="96" height="66" rx="6" fill="url(#ilNavy)"/><rect x="38" y="18" width="84" height="54" rx="3" fill="url(#ilBlue)"/><path d="M38 64 L66 40 L88 54 L122 28 V72 H38z" fill="#fff" opacity=".2"/><path d="M14 80h132l-6 10a4 4 0 0 1-3.5 2H23.5a4 4 0 0 1-3.5-2z" fill="url(#ilMetal)"/><rect x="66" y="80" width="28" height="3" rx="1.5" fill="#9aabc4"/></symbol>
+    <symbol id="ill-desktop" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="44" y="10" width="98" height="64" rx="5" fill="url(#ilNavy)"/><rect x="49" y="15" width="88" height="52" rx="2" fill="url(#ilBlue)"/><path d="M49 60 L74 40 L94 52 L137 24 V67 H49z" fill="#fff" opacity=".2"/><path d="M86 74h14l4 15H82z" fill="url(#ilMetal)"/><rect x="72" y="88" width="42" height="5" rx="2.5" fill="#b9c7dc"/><rect x="14" y="44" width="24" height="49" rx="3" fill="url(#ilNavy)"/><circle cx="26" cy="54" r="2.6" fill="#56ccf2"/><rect x="19" y="62" width="14" height="2" rx="1" fill="#2c4f82"/><rect x="19" y="67" width="14" height="2" rx="1" fill="#2c4f82"/><rect x="19" y="72" width="14" height="2" rx="1" fill="#2c4f82"/></symbol>
+    <symbol id="ill-server" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="12" y="11" width="136" height="88" rx="6" fill="#dfe7f2"/><rect x="18" y="18" width="124" height="22" rx="3" fill="url(#ilNavy)"/><circle cx="28" cy="29" r="2.5" fill="#3ee08f"/><circle cx="36" cy="29" r="2.5" fill="#56ccf2"/><path d="M50 25h58M50 29h58M50 33h58" stroke="#2c4f82" stroke-width="2"/><rect x="116" y="23" width="18" height="12" rx="2" fill="url(#ilBlue)"/><rect x="18" y="44" width="124" height="22" rx="3" fill="url(#ilNavy)"/><circle cx="28" cy="55" r="2.5" fill="#3ee08f"/><circle cx="36" cy="55" r="2.5" fill="#56ccf2"/><path d="M50 51h58M50 55h58M50 59h58" stroke="#2c4f82" stroke-width="2"/><rect x="116" y="49" width="18" height="12" rx="2" fill="url(#ilBlue)"/><rect x="18" y="70" width="124" height="22" rx="3" fill="url(#ilNavy)"/><circle cx="28" cy="81" r="2.5" fill="#3ee08f"/><circle cx="36" cy="81" r="2.5" fill="#56ccf2"/><path d="M50 77h58M50 81h58M50 85h58" stroke="#2c4f82" stroke-width="2"/><rect x="116" y="75" width="18" height="12" rx="2" fill="url(#ilBlue)"/></symbol>
+    <symbol id="ill-switch" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><path d="M49 47 C49 30 56 22 66 12M68 47 C68 34 76 26 88 18M87 57 C92 40 104 30 118 24" stroke="url(#ilBlue)" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="8" y="40" width="144" height="30" rx="4" fill="url(#ilNavy)"/><circle cx="18" cy="50" r="2.5" fill="#3ee08f"/><circle cx="26" cy="50" r="2.5" fill="#56ccf2"/><rect x="15" y="58" width="18" height="3" rx="1.5" fill="#2c4f82"/><rect x="44.0" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="53.5" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="63.0" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="72.5" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="82.0" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="91.5" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="101.0" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="110.5" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="120.0" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="129.5" y="47" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="44.0" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="53.5" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="63.0" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="72.5" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="82.0" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="91.5" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="101.0" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="110.5" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="120.0" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="129.5" y="57" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="8" y="70" width="144" height="5" rx="2" fill="#b9c7dc"/></symbol>
+    <symbol id="ill-ap" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><path d="M50 34a42 42 0 0 1 60 0" stroke="url(#ilBlue)" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M60 45a28 28 0 0 1 40 0" stroke="url(#ilBlue)" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M70 56a14 14 0 0 1 20 0" stroke="url(#ilBlue)" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="82" rx="50" ry="13" fill="url(#ilMetal)"/><ellipse cx="80" cy="78" rx="50" ry="13" fill="#f7f9fd" stroke="#c9d6ea" stroke-width="1.5"/><circle cx="80" cy="78" r="4" fill="#56ccf2"/><ellipse cx="80" cy="78" rx="14" ry="3.6" fill="none" stroke="#dfe7f2" stroke-width="2"/></symbol>
+    <symbol id="ill-ups" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="54" y="8" width="52" height="90" rx="7" fill="url(#ilNavy)"/><rect x="62" y="18" width="36" height="18" rx="3" fill="url(#ilBlue)"/><path d="M82 46 l-9 13 h7 l-2 11 9 -13 h-7z" fill="#56ccf2"/><circle cx="70" cy="84" r="3" fill="#3ee08f"/><circle cx="80" cy="84" r="3" fill="#2c4f82"/><circle cx="90" cy="84" r="3" fill="#2c4f82"/><path d="M106 30h14v40h-14" fill="none" stroke="#b9c7dc" stroke-width="3"/></symbol>
+    <symbol id="ill-firewall" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="12" y="62" width="136" height="26" rx="4" fill="url(#ilNavy)"/><circle cx="22" cy="75" r="2.5" fill="#3ee08f"/><circle cx="30" cy="75" r="2.5" fill="#56ccf2"/><rect x="38" y="73" width="20" height="3" rx="1.5" fill="#2c4f82"/><rect x="70.0" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="79.5" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="89.0" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="98.5" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="108.0" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><rect x="117.5" y="70" width="7" height="6" rx="1" fill="#071222" stroke="#56ccf2" stroke-width=".8"/><path d="M80 6 l27 10 v17 c0 16-11 25-27 30 -16-5-27-14-27-30 V16z" fill="url(#ilBlue)"/><path d="M69 33 l8 8 15-16" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ill-software" viewBox="0 0 160 110"><ellipse cx="80" cy="101" rx="58" ry="4.5" fill="#0a1628" opacity=".09"/><rect x="22" y="10" width="116" height="84" rx="8" fill="#fff" stroke="#c9d6ea" stroke-width="2"/><path d="M22 18a8 8 0 0 1 8-8h100a8 8 0 0 1 8 8v8H22z" fill="url(#ilNavy)"/><circle cx="32" cy="18" r="2.2" fill="#56ccf2"/><circle cx="40" cy="18" r="2.2" fill="#2f80ed"/><rect x="36" y="38" width="22" height="22" rx="4" fill="url(#ilBlue)"/><rect x="62" y="38" width="22" height="22" rx="4" fill="#2f80ed" opacity=".55"/><rect x="36" y="64" width="22" height="22" rx="4" fill="#56ccf2" opacity=".7"/><rect x="62" y="64" width="22" height="22" rx="4" fill="url(#ilNavy)"/><rect x="94" y="42" width="32" height="4" rx="2" fill="#c9d6ea"/><rect x="94" y="52" width="24" height="4" rx="2" fill="#c9d6ea"/><rect x="94" y="62" width="28" height="4" rx="2" fill="#c9d6ea"/><rect x="94" y="72" width="18" height="4" rx="2" fill="#c9d6ea"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3M9 10h6M9 14h6M9 18h3"/></g></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></g></symbol>
     <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></g></symbol>
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -597,11 +729,10 @@
       <span class="wordmark"><span>First</span><span>Solution</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" data-i18n="nav.home">Home</a></li>
       <li><a href="#institutions" data-i18n="nav.inst">Institutions</a></li>
       <li><a href="#solutions" data-i18n="nav.solutions">Solutions &amp; Partners</a></li>
+      <li><a href="#catalogue" data-i18n="nav.catalogue">Catalogue</a></li>
       <li><a href="#about" data-i18n="nav.about">About Us</a></li>
-      <li><a href="#vision" data-i18n="nav.vision">Future Vision</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li>
     </ul>
     <div class="nav-actions">
@@ -609,6 +740,7 @@
         <button type="button" data-lang="en" class="on">EN</button>
         <button type="button" data-lang="sq">SQ</button>
       </div>
+      <button type="button" class="qbtn" id="qbtn" aria-haspopup="dialog" aria-controls="drawer" aria-label="Quote list" title="Quote list"><svg><use href="#i-list"/></svg><span class="n zero" id="qcount">0</span></button>
       <a href="#contact" class="btn btn-primary" data-i18n="nav.quote">Request an offer</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -695,7 +827,7 @@
   <div class="container">
     <div class="inst">
       <div class="inst-photo reveal">
-        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=70')" role="img" aria-label="Institutional building"></div>
+        <div class="ph" data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=70" role="img" aria-label="Institutional building"></div>
         <div class="seal" aria-hidden="true">
           <svg class="ring" viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text font-size="9" font-weight="800" fill="#9fdcf7"><textPath href="#circ" textLength="246" lengthAdjust="spacing">TRUSTED PARTNER • TRUSTED PARTNER •</textPath></text></svg>
           <span class="core"><svg><use href="#shield"/></svg></span>
@@ -712,6 +844,10 @@
           <div><svg><use href="#shield"/></svg><span data-i18n="inst.a1">Compliant with public procurement requirements</span></div>
           <div><svg><use href="#shield"/></svg><span data-i18n="inst.a2">Genuine products through official vendor channels</span></div>
           <div><svg><use href="#shield"/></svg><span data-i18n="inst.a3">Complete documentation at every delivery</span></div>
+        </div>
+        <div class="profile-cta reveal d2">
+          <a class="btn btn-dark profile-link" href="First-Solution-Company-Profile-EN.pdf" download><svg><use href="#i-doc"/></svg><span data-i18n="prof.btn">Download company profile</span></a>
+          <small data-i18n="prof.note">PDF · 2 pages · ready for tender files</small>
         </div>
       </div>
     </div>
@@ -769,8 +905,8 @@
       </div>
 
       <div class="panels">
-        <article class="panel active" role="tabpanel">
-          <div class="ph" style="--img:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=70')"></div>
+        <div class="panel active" role="tabpanel">
+          <div class="ph" data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=70"></div>
           <div class="body">
             <h3 data-i18n="sol.s1t">Enterprise Computing</h3>
             <p data-i18n="sol.s1d">High-performance servers, storage and workstations from HP, DELL and Lenovo, configured for your workloads and backed by official manufacturer warranty.</p>
@@ -785,9 +921,9 @@
               <a href="#contact" class="btn btn-primary" data-need="computers"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
-        </article>
-        <article class="panel" role="tabpanel">
-          <div class="ph" style="--img:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=70')"></div>
+        </div>
+        <div class="panel" role="tabpanel">
+          <div class="ph" data-img="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=70"></div>
           <div class="body">
             <h3 data-i18n="sol.s2t">Networking Excellence</h3>
             <p data-i18n="sol.s2d">Robust wired and wireless infrastructure using Cisco, TP-Link and Omada solutions, from a single office to multi-site organizations.</p>
@@ -802,9 +938,9 @@
               <a href="#contact" class="btn btn-primary" data-need="network"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
-        </article>
-        <article class="panel" role="tabpanel">
-          <div class="ph" style="--img:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=70')"></div>
+        </div>
+        <div class="panel" role="tabpanel">
+          <div class="ph" data-img="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=70"></div>
           <div class="body">
             <h3 data-i18n="sol.s3t">Business Continuity</h3>
             <p data-i18n="sol.s3d">Uninterrupted power supply and protection with APC systems, so critical public services and data never stop.</p>
@@ -819,9 +955,9 @@
               <a href="#contact" class="btn btn-primary" data-need="ups"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
-        </article>
-        <article class="panel" role="tabpanel">
-          <div class="ph" style="--img:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70')"></div>
+        </div>
+        <div class="panel" role="tabpanel">
+          <div class="ph" data-img="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70"></div>
           <div class="body">
             <h3 data-i18n="sol.s4t">Software &amp; Security</h3>
             <p data-i18n="sol.s4d">Official Microsoft licensing and enterprise-grade firewall protection from Check Point, configured to protect sensitive data.</p>
@@ -836,7 +972,7 @@
               <a href="#contact" class="btn btn-primary" data-need="security"><span data-i18n="sol.cta">Request an offer</span><svg><use href="#arrow"/></svg></a>
             </div>
           </div>
-        </article>
+        </div>
       </div>
     </div>
 
@@ -850,7 +986,7 @@
 </section>
 
 <!-- ================= TYPICAL PROJECTS ================= -->
-<section class="section" id="projects">
+<section class="section section-soft" id="projects">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="proj.eyebrow">Typical projects</span>
@@ -859,26 +995,26 @@
     </div>
     <div class="projects">
       <a href="#contact" class="proj reveal" data-need="computers">
-        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div class="ph" data-img="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=70"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
         <div><span class="tag" data-i18n="proj.tag">Typical project</span>
           <h3 data-i18n="proj.p1t">Office &amp; workstation rollout</h3>
           <p data-i18n="proj.p1d">Laptops, desktops, monitors and printers delivered, configured and installed at every desk, ready on day one.</p>
           <div class="chips"><span>HP · Dell · Lenovo</span><span data-i18n="proj.c1b">Setup &amp; configuration</span><span data-i18n="proj.c1c">Asset labelling</span></div></div>
       </a>
       <a href="#contact" class="proj reveal d1" data-need="servers">
-        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div class="ph" data-img="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=70"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
         <div><span class="tag" data-i18n="proj.tag">Typical project</span>
           <h3 data-i18n="proj.p2t">Server room modernization</h3>
           <p data-i18n="proj.p2d">Servers, storage, racks and APC power protection, sized for your workloads.</p></div>
       </a>
       <a href="#contact" class="proj reveal d2" data-need="network">
-        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div class="ph" data-img="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=70"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
         <div><span class="tag" data-i18n="proj.tag">Typical project</span>
           <h3 data-i18n="proj.p3t">Building-wide Wi-Fi &amp; LAN</h3>
           <p data-i18n="proj.p3d">Structured cabling, switching and centrally managed Wi-Fi across floors and buildings.</p></div>
       </a>
       <a href="#contact" class="proj reveal d1" data-need="security">
-        <div class="ph" style="--img:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70')"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+        <div class="ph" data-img="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70"></div><span class="go" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
         <div><span class="tag" data-i18n="proj.tag">Typical project</span>
           <h3 data-i18n="proj.p4t">Security &amp; licensing</h3>
           <p data-i18n="proj.p4d">Check Point firewalls and official Microsoft licensing, configured, documented and handed over.</p>
@@ -888,13 +1024,31 @@
   </div>
 </section>
 
+<!-- ================= CATALOGUE ================= -->
+<section class="section" id="catalogue">
+  <div class="container">
+    <div class="cat-top">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="cat.eyebrow">Catalogue preview</span>
+        <h2 data-i18n="cat.title">Genuine equipment from the brands you trust</h2>
+        <p data-i18n="cat.lead">Browse a selection of what we supply and build your quote list. Prices are prepared on request, for your exact quantities and specifications.</p>
+      </div>
+      <label class="search reveal d1"><svg><use href="#i-search"/></svg><input type="search" id="catSearch" data-i18n-ph="cat.search" placeholder="Search products or brands" aria-label="Search products"></label>
+    </div>
+    <div class="filters reveal" id="catFilters"></div>
+    <div class="products" id="catGrid" aria-live="polite"></div>
+    <div class="cat-more"><button type="button" class="btn btn-light" id="catMore">Show all products</button></div>
+    <p class="cat-note"><span data-i18n="cat.note">A preview of our upcoming online IT marketplace.</span> <a href="#vision" data-i18n="cat.noteLink">See our future vision</a></p>
+  </div>
+</section>
+
 <!-- ================= ABOUT ================= -->
-<section class="section section-soft" id="about">
+<section class="section section-soft" id="about" style="background:#fff">
   <div class="container">
     <div class="about">
       <div class="collage reveal">
-        <div class="a ph" style="--img:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=70')" role="img" aria-label="Team at work"></div>
-        <div class="b ph" style="--img:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=70')" role="img" aria-label="Modern office"></div>
+        <div class="a ph" data-img="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=70" role="img" aria-label="Team at work"></div>
+        <div class="b ph" data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=70" role="img" aria-label="Modern office"></div>
         <div class="tag"><strong class="grad">15+</strong><span data-i18n="about.tag">years of building<br>IT that lasts</span></div>
       </div>
       <div class="txt">
@@ -1037,7 +1191,7 @@
 <section class="section" style="padding-bottom:0">
   <div class="container">
     <div class="cta reveal">
-      <div class="ph" style="--img:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=60')"></div>
+      <div class="ph" data-img="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=60"></div>
       <h2 data-i18n="cta.title">Preparing a tender or an IT procurement?</h2>
       <p data-i18n="cta.lead">Send us your requirements or technical specification. We will respond with a compliant, competitive offer.</p>
       <div class="row-btns">
@@ -1151,7 +1305,7 @@
       </div>
       <div>
         <h4 data-i18n="ft.company">Company</h4>
-        <ul><li><a href="#about" data-i18n="nav.about">About Us</a></li><li><a href="#institutions" data-i18n="nav.inst">Institutions</a></li><li><a href="#vision" data-i18n="nav.vision">Future Vision</a></li><li><a href="#faq">FAQ</a></li></ul>
+        <ul><li><a href="#about" data-i18n="nav.about">About Us</a></li><li><a href="#institutions" data-i18n="nav.inst">Institutions</a></li><li><a href="#vision" data-i18n="nav.vision">Future Vision</a></li><li><a href="#faq">FAQ</a></li><li><a class="profile-link" href="First-Solution-Company-Profile-EN.pdf" download data-i18n="prof.short">Company profile (PDF)</a></li></ul>
       </div>
       <div>
         <h4 data-i18n="nav.solutions">Solutions &amp; Partners</h4>
@@ -1168,16 +1322,33 @@
       <span data-i18n="ft.tag">Our business, helping your business.</span>
     </div>
   </div>
-</footer>
-
+<div class="toast" id="toast" role="status"><svg><use href="#check"/></svg><span id="toastMsg"></span><button type="button" id="toastView" data-i18n="q.view">View list</button></div>
 <a href="tel:+38345999015" class="call-fab" id="callFab"><svg><use href="#phone"/></svg><span data-i18n="fab.call">Call us</span></a>
 <button class="to-top" id="toTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
+</footer>
+
+<div class="drawer-bg" id="drawerBg"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="dh"><div><h3 id="drawerTitle" data-i18n="q.title">Your quote list</h3><span id="drawerSub"></span></div><button type="button" class="dclose" id="drawerClose" aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="dlist" id="dlist"></div>
+  <div class="df" id="dfoot">
+    <button type="button" class="btn btn-primary" id="qRequest"><span data-i18n="q.cta">Request a quote for these items</span><svg><use href="#arrow"/></svg></button>
+    <button type="button" class="clear" id="qClear" data-i18n="q.clear">Clear list</button>
+    <p data-i18n="q.note">No commitment. We reply with prices and availability within one business day.</p>
+  </div>
+</div>
 
 <script>
   /* ---------- Albanian translations ---------- */
   const SQ = {
+    "nav.catalogue": "Katalogu", "q.btn": "Lista e ofertës", "q.title": "Lista juaj e ofertës", "q.cta": "Kërko ofertë për këta artikuj",
+    "q.clear": "Pastro listën", "q.note": "Pa asnjë detyrim. Ju përgjigjemi me çmime dhe disponueshmëri brenda një dite pune.", "q.view": "Shiko listën",
+    "cat.eyebrow": "Pamje e katalogut", "cat.title": "Pajisje origjinale nga markat që u besoni",
+    "cat.lead": "Shfletoni një përzgjedhje të asaj që furnizojmë dhe krijoni listën tuaj të ofertës. Çmimet përgatiten sipas kërkesës, për sasitë dhe specifikat tuaja të sakta.",
+    "cat.search": "Kërkoni produkte ose marka", "cat.note": "Një pamje paraprake e tregut tonë të ardhshëm online për IT.", "cat.noteLink": "Shihni vizionin tonë",
+    "prof.btn": "Shkarko profilin e kompanisë", "prof.note": "PDF · 2 faqe · gati për dosjet e tenderit", "prof.short": "Profili i kompanisë (PDF)",
     "proj.eyebrow": "Projekte tipike", "proj.title": "Çfarë dorëzojmë, nga tavolina e parë te dhoma e serverëve",
     "proj.lead": "Shembuj të projekteve që planifikojmë, furnizojmë dhe instalojmë për institucione dhe biznese në mbarë Kosovën.",
     "proj.tag": "Projekt tipik",
@@ -1285,7 +1456,7 @@
     en: ["institutions", "ministries", "municipalities", "hospitals", "schools", "businesses"],
     sq: ["institucionet", "ministritë", "komunat", "spitalet", "shkollat", "bizneset"]
   };
-  let lang = "en", wizReady = false;
+  let lang = "en", wizReady = false, catReady = false;
   const EN = {};
   document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (!(k in EN)) EN[k] = el.innerHTML; });
   function setLang(l) {
@@ -1297,6 +1468,9 @@
     wordIndex = 0; rotator.textContent = WORDS[l][0];
     document.querySelectorAll("[data-i18n-ph]").forEach(el => { if (!el.dataset.phEn) el.dataset.phEn = el.placeholder; el.placeholder = l === "sq" ? SQ[el.dataset.i18nPh] : el.dataset.phEn; });
     if (wizReady) wizRender();
+    if (catReady) { renderFilters(); renderCatalogue(); renderBasket(); }
+    const ql = l === "sq" ? "Lista e ofertës" : "Quote list"; document.getElementById("qbtn").setAttribute("aria-label", ql); document.getElementById("qbtn").title = ql;
+    document.querySelectorAll(".profile-link").forEach(a => a.href = `First-Solution-Company-Profile-${l === "sq" ? "SQ" : "EN"}.pdf`);
     try { localStorage.setItem("fs-lang", l); } catch (e) {}
   }
 
@@ -1436,7 +1610,8 @@
     wizErr.textContent = "";
     if (step === steps.length - 1) {
       const m = MSG[lang];
-      wizSum.innerHTML = `<span><b>${m.who}:</b> ${checked("org").map(labelOf).join("")}</span><span><b>${m.needs}:</b> ${checked("needs").map(labelOf).join(", ")}</span><span><b>${m.size}:</b> ${checked("size").map(labelOf).join("")} · <b>${m.time}:</b> ${checked("timeline").map(labelOf).join("")}</span>`;
+      wizSum.innerHTML = `<span><b>${m.who}:</b> ${checked("org").map(labelOf).join("")}</span><span><b>${m.needs}:</b> ${checked("needs").map(labelOf).join(", ")}</span><span><b>${m.size}:</b> ${checked("size").map(labelOf).join("")} · <b>${m.time}:</b> ${checked("timeline").map(labelOf).join("")}</span>` +
+        (basketLines().length ? `<span><b>${CT[lang].items}:</b> ${basketLines().join(", ")}</span>` : "");
     }
   }
   function wizError() {
@@ -1472,6 +1647,7 @@
       `Needs: ${v("needs")}`,
       `Users / devices: ${v("size")}`,
       `Timeline: ${v("timeline")}`,
+      ...(basketLines().length ? ["", "Quote list:", ...basketLines().map(l => "- " + l)] : []),
       "", document.getElementById("f-msg").value.trim()
     ].join("\n");
     wizErr.textContent = "";
@@ -1480,6 +1656,191 @@
   });
   wizReady = true;
   wizRender();
+
+  /* ---------- Catalogue preview + quote list ---------- */
+  const CT = {
+    en: { add: "Add to quote", added: "In quote list", price: "Price on request", more: "Show all products", less: "Show fewer",
+          empty: "No products match your search.", toast: "Added to your quote list", items: "Items", remove: "Remove",
+          qEmpty: "Your quote list is empty. Add products from the catalogue to request a quote.", browse: "Browse the catalogue",
+          sub: n => `${n} ${n === 1 ? "item" : "items"}` },
+    sq: { add: "Shto në ofertë", added: "Në listë", price: "Çmimi sipas kërkesës", more: "Shfaq të gjitha produktet", less: "Shfaq më pak",
+          empty: "Asnjë produkt nuk përputhet me kërkimin.", toast: "U shtua në listën e ofertës", items: "Artikujt", remove: "Hiq",
+          qEmpty: "Lista juaj e ofertës është bosh. Shtoni produkte nga katalogu për të kërkuar ofertë.", browse: "Shfletoni katalogun",
+          sub: n => `${n} ${n === 1 ? "artikull" : "artikuj"}` }
+  };
+  const CATS = [
+    { k: "all", en: "All", sq: "Të gjitha" },
+    { k: "laptops", en: "Laptops", sq: "Laptopë" },
+    { k: "desktops", en: "Desktops & workstations", sq: "Desktopë & stacione pune" },
+    { k: "servers", en: "Servers", sq: "Serverë" },
+    { k: "network", en: "Networking", sq: "Rrjete" },
+    { k: "power", en: "Power & UPS", sq: "Energji & UPS" },
+    { k: "security", en: "Security & software", sq: "Siguri & softuer" }
+  ];
+  const PRODUCTS = [
+    { id: "hp-elitebook", name: "HP EliteBook series", brand: "HP", cat: "laptops", ill: "laptop", logo: "hp", need: "computers",
+      en: ['14" and 16" business laptops', "Intel Core Ultra or AMD Ryzen", "Official HP warranty"],
+      sq: ['Laptopë biznesi 14" dhe 16"', "Intel Core Ultra ose AMD Ryzen", "Garanci zyrtare HP"] },
+    { id: "dell-latitude", name: "Dell Latitude series", brand: "Dell", cat: "laptops", ill: "laptop", logo: "dell", need: "computers",
+      en: ["Business laptops for every role", "Built for daily mobile work", "Official Dell warranty"],
+      sq: ["Laptopë biznesi për çdo rol", "Të ndërtuar për punë të përditshme në lëvizje", "Garanci zyrtare Dell"] },
+    { id: "lenovo-thinkpad", name: "Lenovo ThinkPad series", brand: "Lenovo", cat: "laptops", ill: "laptop", logo: "lenovo", need: "computers",
+      en: ["Durable ThinkPad design and keyboard", "T, E and X1 series", "Official Lenovo warranty"],
+      sq: ["Dizajn dhe tastierë ThinkPad e qëndrueshme", "Seritë T, E dhe X1", "Garanci zyrtare Lenovo"] },
+    { id: "hp-elite-desktop", name: "HP Elite desktops", brand: "HP", cat: "desktops", ill: "desktop", logo: "hp", need: "computers",
+      en: ["Mini, small form factor and tower", "Easy to manage across fleets", "Official HP warranty"],
+      sq: ["Mini, format i vogël dhe tower", "Menaxhim i lehtë i flotës së pajisjeve", "Garanci zyrtare HP"] },
+    { id: "dell-optiplex", name: "Dell OptiPlex desktops", brand: "Dell", cat: "desktops", ill: "desktop", logo: "dell", need: "computers",
+      en: ["Micro, small form factor and tower", "Reliable everyday office PCs", "Official Dell warranty"],
+      sq: ["Micro, format i vogël dhe tower", "Kompjuterë të besueshëm për zyrë", "Garanci zyrtare Dell"] },
+    { id: "lenovo-thinkcentre", name: "Lenovo ThinkCentre & ThinkStation", brand: "Lenovo", cat: "desktops", ill: "desktop", logo: "lenovo", need: "computers",
+      en: ["Office desktops and pro workstations", "For CAD, design and data work", "Official Lenovo warranty"],
+      sq: ["Desktopë zyre dhe stacione pune profesionale", "Për CAD, dizajn dhe punë me të dhëna", "Garanci zyrtare Lenovo"] },
+    { id: "dell-poweredge", name: "Dell PowerEdge servers", brand: "Dell", cat: "servers", ill: "server", logo: "dell", need: "servers",
+      en: ["Rack and tower servers", "Virtualization, databases and files", "Official Dell warranty"],
+      sq: ["Serverë rack dhe tower", "Virtualizim, baza të dhënash dhe skedarë", "Garanci zyrtare Dell"] },
+    { id: "lenovo-thinksystem", name: "Lenovo ThinkSystem servers", brand: "Lenovo", cat: "servers", ill: "server", logo: "lenovo", need: "servers",
+      en: ["Rack and tower servers", "Storage for growing data", "Official Lenovo warranty"],
+      sq: ["Serverë rack dhe tower", "Ruajtje për të dhëna në rritje", "Garanci zyrtare Lenovo"] },
+    { id: "cisco-catalyst", name: "Cisco Catalyst switches", brand: "Cisco", cat: "network", ill: "switch", logo: "cisco", need: "network",
+      en: ["Access and core switching", "PoE for phones, cameras and Wi-Fi", "Enterprise-grade reliability"],
+      sq: ["Switching për qasje dhe bërthamë", "PoE për telefona, kamera dhe Wi-Fi", "Besueshmëri e nivelit të ndërmarrjeve"] },
+    { id: "omada-ap", name: "Omada Wi-Fi access points", brand: "Omada", cat: "network", ill: "ap", logo: "omadacloud", need: "network",
+      en: ["Wi-Fi 6, 6E and 7 access points", "Ceiling, wall and outdoor models", "Central cloud management"],
+      sq: ["Access point Wi-Fi 6, 6E dhe 7", "Modele për tavan, mur dhe ambient të jashtëm", "Menaxhim qendror në cloud"] },
+    { id: "tplink-omada-switch", name: "TP-Link Omada switches & gateways", brand: "TP-Link", cat: "network", ill: "switch", logo: "tplink", need: "network",
+      en: ["Managed PoE switches", "VPN gateways and routers", "One Omada controller for all"],
+      sq: ["Switch PoE të menaxhueshëm", "Gateway dhe router VPN", "Një kontrollues Omada për të gjitha"] },
+    { id: "apc-smart-ups", name: "APC Smart-UPS", brand: "APC", cat: "power", ill: "ups", logo: "apc", need: "ups",
+      en: ["Line-interactive and online UPS", "Rack and tower models", "For servers and network rooms"],
+      sq: ["UPS line-interactive dhe online", "Modele rack dhe tower", "Për serverë dhe dhoma rrjeti"] },
+    { id: "checkpoint-quantum", name: "Check Point Quantum firewalls", brand: "Check Point", cat: "security", ill: "firewall", logo: "checkpoint", need: "security",
+      en: ["Next-generation firewalls", "Threat prevention and VPN", "From branch office to data center"],
+      sq: ["Firewall të gjeneratës së re", "Parandalim kërcënimesh dhe VPN", "Nga zyra e degës te qendra e të dhënave"] },
+    { id: "microsoft-licensing", name: "Microsoft 365 & Windows", brand: "Microsoft", cat: "security", ill: "software", logo: "ms", need: "licensing",
+      en: ["Microsoft 365 business plans", "Windows and Windows Server", "Official volume licensing"],
+      sq: ["Planet Microsoft 365 për biznes", "Windows dhe Windows Server", "Licencim zyrtar me volum"] }
+  ];
+  const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+  const esc = t => t.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function logoHTML(p) {
+    if (p.logo === "apc") return "APC";
+    if (p.logo === "checkpoint") return "Check Point";
+    if (p.logo === "ms") return '<span class="ms"><i></i><i></i><i></i><i></i></span>Microsoft';
+    const cls = p.logo === "lenovo" || p.logo === "omadacloud" ? ' class="w3"' : p.logo === "cisco" ? ' class="w2"' : "";
+    return `<svg${cls} aria-label="${esc(p.brand)}"><use href="#logo-${p.logo}"/></svg>`;
+  }
+  let basket = {};
+  try { basket = JSON.parse(localStorage.getItem("fs-quote") || "{}") || {}; } catch (e) { basket = {}; }
+  Object.keys(basket).forEach(id => { if (!byId[id] || !(basket[id] > 0)) delete basket[id]; });
+  const saveBasket = () => { try { localStorage.setItem("fs-quote", JSON.stringify(basket)); } catch (e) {} };
+  function basketLines() { return Object.entries(basket).map(([id, q]) => `${q} × ${byId[id].name}`); }
+
+  let catFilter = "all", catQuery = "", catAll = false;
+  const catGrid = document.getElementById("catGrid"), catFilters = document.getElementById("catFilters"), catMore = document.getElementById("catMore");
+  function matches(p) {
+    if (catFilter !== "all" && p.cat !== catFilter) return false;
+    if (!catQuery) return true;
+    const hay = (p.name + " " + p.brand + " " + p.en.join(" ") + " " + p.sq.join(" ")).toLowerCase();
+    return catQuery.toLowerCase().split(/\s+/).every(w => hay.includes(w));
+  }
+  function renderFilters() {
+    catFilters.innerHTML = CATS.map(c => {
+      const n = c.k === "all" ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === c.k).length;
+      return `<button type="button" class="${c.k === catFilter ? "on" : ""}" data-cat="${c.k}" aria-pressed="${c.k === catFilter}">${c[lang]}<span class="ct">${n}</span></button>`;
+    }).join("");
+  }
+  function renderCatalogue() {
+    const t = CT[lang], list = PRODUCTS.filter(matches);
+    const limited = catFilter === "all" && !catQuery && !catAll;
+    const shown = limited ? list.slice(0, 8) : list;
+    catGrid.innerHTML = shown.length ? shown.map((p, i) => {
+      const inB = !!basket[p.id];
+      return `<article class="product" style="animation-delay:${i * 45}ms">
+        <div class="vis"><span class="brandmark">${logoHTML(p)}</span><span class="catchip">${CATS.find(c => c.k === p.cat)[lang]}</span><svg class="ill" aria-hidden="true"><use href="#ill-${p.ill}"/></svg></div>
+        <div class="body"><h3>${esc(p.name)}</h3><ul>${p[lang].map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+          <div class="pfoot"><span class="price">${t.price}</span><button type="button" class="add${inB ? " added" : ""}" data-id="${p.id}"><svg><use href="#${inB ? "check" : "i-plus"}"/></svg>${inB ? t.added : t.add}</button></div></div>
+      </article>`;
+    }).join("") : `<div class="empty">${t.empty}</div>`;
+    catMore.hidden = !(catFilter === "all" && !catQuery && list.length > 8);
+    catMore.textContent = catAll ? t.less : t.more;
+  }
+  catFilters.addEventListener("click", e => {
+    const b = e.target.closest("button[data-cat]"); if (!b) return;
+    catFilter = b.dataset.cat; renderFilters(); renderCatalogue();
+  });
+  document.getElementById("catSearch").addEventListener("input", e => { catQuery = e.target.value.trim(); renderCatalogue(); });
+  catMore.addEventListener("click", () => {
+    catAll = !catAll; renderCatalogue();
+    if (!catAll) document.getElementById("catalogue").scrollIntoView({ behavior: "smooth" });
+  });
+
+  const qbtn = document.getElementById("qbtn"), qcount = document.getElementById("qcount"), dlist = document.getElementById("dlist"), dfoot = document.getElementById("dfoot");
+  function renderBasket() {
+    const t = CT[lang], ids = Object.keys(basket), total = ids.reduce((a, id) => a + basket[id], 0);
+    qcount.textContent = total; qcount.classList.toggle("zero", total === 0);
+    document.getElementById("drawerSub").textContent = t.sub(total);
+    dfoot.hidden = total === 0;
+    dlist.innerHTML = total === 0
+      ? `<div class="dempty"><svg><use href="#i-list"/></svg><p>${t.qEmpty}</p><a href="#catalogue" class="btn btn-dark" data-close>${t.browse}</a></div>`
+      : ids.map(id => { const p = byId[id]; return `<div class="ditem"><span class="mini"><svg><use href="#ill-${p.ill}"/></svg></span>
+          <div><b>${esc(p.name)}</b><small>${CATS.find(c => c.k === p.cat)[lang]}</small><button type="button" class="rm" data-act="rm" data-id="${id}">${t.remove}</button></div>
+          <div class="qty"><button type="button" data-act="dec" data-id="${id}" aria-label="−">−</button><span>${basket[id]}</span><button type="button" data-act="inc" data-id="${id}" aria-label="+">+</button></div></div>`; }).join("");
+    if (wizReady && step === steps.length - 1) wizRender();
+  }
+  let toastTimer;
+  function toast(msg) {
+    const el = document.getElementById("toast"); document.getElementById("toastMsg").textContent = msg;
+    el.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 3200);
+  }
+  catGrid.addEventListener("click", e => {
+    const b = e.target.closest(".add"); if (!b) return;
+    const id = b.dataset.id;
+    if (basket[id]) { openDrawer(); return; }
+    basket[id] = 1; saveBasket(); renderBasket(); renderCatalogue();
+    qbtn.classList.remove("bump"); void qbtn.offsetWidth; qbtn.classList.add("bump");
+    toast(CT[lang].toast);
+  });
+  dlist.addEventListener("click", e => {
+    if (e.target.closest("[data-close]")) { closeDrawer(); return; }
+    const b = e.target.closest("[data-act]"); if (!b) return;
+    const id = b.dataset.id, act = b.dataset.act;
+    if (act === "inc") basket[id] = Math.min(basket[id] + 1, 999);
+    if (act === "dec") basket[id] = basket[id] - 1;
+    if (act === "rm" || basket[id] <= 0) delete basket[id];
+    saveBasket(); renderBasket(); renderCatalogue();
+  });
+
+  let lastFocus = null;
+  function openDrawer() {
+    lastFocus = document.activeElement; document.body.classList.add("drawer-open");
+    document.getElementById("toast").classList.remove("show");
+    setTimeout(() => document.getElementById("drawerClose").focus(), 60);
+  }
+  function closeDrawer() { document.body.classList.remove("drawer-open"); if (lastFocus) lastFocus.focus({ preventScroll: true }); }
+  qbtn.addEventListener("click", openDrawer);
+  document.getElementById("toastView").addEventListener("click", openDrawer);
+  document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+  document.getElementById("drawerBg").addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && document.body.classList.contains("drawer-open")) closeDrawer(); });
+  document.getElementById("qClear").addEventListener("click", () => { basket = {}; saveBasket(); renderBasket(); renderCatalogue(); });
+  document.getElementById("qRequest").addEventListener("click", () => {
+    Object.keys(basket).forEach(id => { const box = document.querySelector(`#wizard input[data-key="${byId[id].need}"]`); if (box) box.checked = true; });
+    closeDrawer();
+    step = 0; wizRender();
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
+
+  catReady = true;
+  renderFilters(); renderCatalogue(); renderBasket();
+
+  /* ---------- Load photos only when they come near the screen ---------- */
+  const imgObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.style.setProperty("--img", `url('${e.target.dataset.img}')`);
+    imgObs.unobserve(e.target);
+  }), { rootMargin: "700px 0px" });
+  document.querySelectorAll("[data-img]").forEach(el => imgObs.observe(el));
 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
